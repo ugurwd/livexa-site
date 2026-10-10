@@ -566,3 +566,240 @@ html.lenis,html.lenis body{height:auto}
 :root{--bant-h:0px}
 .hero__imza--uzun{font-size:clamp(42px,6.2vw,92px);line-height:.98}
 .kunye thead th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding-top:0}
+
+/* Satın al sabah tezgâhı — K8 IE-2026-10-10-015. Kaynak: 99-arsiv/onizleme/2026-10-10-satin-al-sicak.html (önizleme notları çıkarıldı)
+   ve yön notları 2026-10-09 / 2026-10-10. Ana sayfa bolum-07-satin-al + satin-al.html. */
+/* gezinme: Satın al dolu hap, SSS düz bağlantı (hiyerarşi düzeltmesi) */
+.gezinme__linkler a[href="satin-al.html"]{background:var(--murekkep);color:var(--krem)}
+.gezinme__linkler a[href="satin-al.html"]:hover{background:var(--mandalina);color:var(--murekkep)}
+@media (min-width:1100px){.gezinme__linkler a[href="satin-al.html"]::after{display:none}}
+
+/* ---------- ortak: raf ---------- */
+.raf__sahne,.raf__etiketler{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--raf-ara)}
+.raf__sahne{align-items:end}
+.raf__urun{position:relative;margin:0;justify-self:center;width:min(100%,var(--kutu-w))}
+.raf__urun img{position:relative;z-index:1;display:block;width:100%;height:auto}
+.raf__urun::after{content:"";position:absolute;z-index:0;left:4%;right:4%;bottom:-9px;height:20px;border-radius:50%;background:radial-gradient(closest-side,var(--temas) 0%,transparent 100%)}
+.etiket-fiyat{justify-self:center;width:min(100%,var(--kutu-w));transform-origin:50% 0;text-decoration:none;display:block}
+.etiket-fiyat .ustbilgi{margin:0}
+.etiket-fiyat__tutar{font-family:var(--disp);font-weight:800;font-size:var(--tutar);line-height:.95;letter-spacing:-.025em;font-variant-numeric:tabular-nums lining-nums;margin:.28em 0 .22em;white-space:nowrap}
+.etiket-fiyat__tutar span{font-size:.42em;letter-spacing:.01em;margin-left:.14em}
+.etiket-fiyat__not{margin:0;font-size:15px;font-weight:700}
+.pip{display:inline-block;flex:none;width:10px;height:10px;border-radius:50%;background:var(--safran);box-shadow:0 0 0 4px rgba(255,185,48,.25);margin-right:10px;vertical-align:.05em}
+
+@keyframes sallan{0%{rotate:-5deg}35%{rotate:3deg}62%{rotate:-1.4deg}82%{rotate:.5deg}100%{rotate:0deg}}
+@media (prefers-reduced-motion:no-preference){
+  .js .etiket-fiyat{rotate:-5deg}
+  .js .asili .etiket-fiyat{animation:sallan 1.5s cubic-bezier(.3,.7,.3,1) both}
+  .js .asili .etiket-fiyat:nth-child(2){animation-delay:.14s}
+}
+
+/* =====================================================================
+   (a) SATIN AL SAYFASI — ÜST BÖLÜM
+   ===================================================================== */
+.sa{padding-top:clamp(24px,4vw,56px)}
+.sa-bas{display:grid;gap:16px 24px;align-items:end;margin-bottom:clamp(24px,3.4vw,48px)}
+.sa-bas h1{font-family:var(--disp);font-size:clamp(48px,6.4vw,92px);line-height:.9;letter-spacing:-.03em;margin:0}
+.sa-bas__marka{font-family:var(--disp);font-size:20px;letter-spacing:.02em;margin:0 0 6px}
+.sa-bas__tanim p{margin:0;max-width:56ch;font-size:clamp(16px,1.3vw,18px);line-height:1.55}
+@media (min-width:1100px){.sa-bas{grid-template-columns:repeat(12,minmax(0,1fr))}.sa-bas h1{grid-column:1 / span 5}.sa-bas__tanim{grid-column:7 / span 6}}
+
+.raf__durum{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 40px;margin-top:clamp(28px,3.4vw,48px);padding-top:18px;border-top:1px solid rgba(255,244,223,.18);font-size:16px}
+.raf__durum p{margin:0}
+.raf__durum .durum-not{color:rgba(255,244,223,.86)}
+.raf__durum .durum-not strong{color:var(--krem)}
+.raf__durum .durum-kargo{color:var(--krem)}
+.raf__durum .durum-kargo .ustbilgi{color:var(--safran);margin-right:10px;font-size:11px}
+
+/* sipariş */
+.sa-modul{display:grid;gap:24px;padding-block:clamp(48px,6vw,88px);border-bottom:3px solid var(--murekkep)}
+@media (min-width:1100px){.sa-modul{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}.sa-modul__sol{grid-column:1 / span 4}.sa-modul__sag{grid-column:6 / span 7}}
+.sa-modul h2{font-family:var(--disp);font-size:clamp(30px,3vw,44px);line-height:1;letter-spacing:-.02em;margin:0 0 16px}
+.sa-modul__sol p{margin:0;font-size:16px;max-width:44ch}
+.adimlar{list-style:none;counter-reset:adim;margin:0;padding:0}
+.adimlar>li{counter-increment:adim;position:relative;padding:0 0 26px 64px;font-size:17px;line-height:1.5}
+.adimlar>li::before{content:counter(adim);position:absolute;left:0;top:-4px;width:42px;height:42px;border-radius:50%;border:3px solid var(--murekkep);display:grid;place-items:center;font:800 19px/1 var(--disp)}
+.adimlar>li:not(:last-child)::after{content:"";position:absolute;left:20px;top:44px;bottom:6px;width:3px;background:rgba(34,26,74,.14)}
+.onay{display:flex;gap:14px;align-items:flex-start;margin-top:14px;padding:16px 18px;background:var(--beyaz);border-radius:16px;cursor:not-allowed;font-size:16px}
+.onay input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;margin:1px 0 0;border:3px solid var(--murekkep);border-radius:7px;background:var(--krem);opacity:.45}
+.odeme-satir{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:14px}
+.dugme--kapali{min-height:56px;padding:0 30px;border:3px solid rgba(34,26,74,.16);background:rgba(34,26,74,.06);color:rgba(34,26,74,.48);cursor:not-allowed}
+.dugme--kapali:hover{background:rgba(34,26,74,.06);border-color:rgba(34,26,74,.16);color:rgba(34,26,74,.48);transform:none}
+.odeme-not{margin:0;display:flex;align-items:center;font-weight:700;font-size:16px}
+.odeme-bilgi{list-style:none;margin:8px 0 0 64px;padding:18px 0 0;border-top:2px solid rgba(34,26,74,.1);display:grid;gap:8px;font-size:15px}
+.odeme-bilgi li{position:relative;padding-left:18px}
+.odeme-bilgi li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--nane-koyu)}
+
+/* kargo ve iade */
+.sa-iki{display:grid;gap:16px 40px}
+@media (min-width:760px){.sa-iki{grid-template-columns:1fr 1fr}}
+.sa-iki p{margin:0;font-size:16px}
+
+/* ürün tablosu: fiyat ve kargo satırları rafa taşındı */
+.sa-tablo{width:100%;border-collapse:collapse;font-size:16px}
+.sa-tablo th,.sa-tablo td{text-align:left;vertical-align:top;padding:13px 0;border-bottom:1.5px solid rgba(34,26,74,.14)}
+.sa-tablo th{width:40%;font-weight:700;font-size:14px;padding-right:16px}
+.sa-tablo td{font-variant-numeric:tabular-nums}
+.sa-tablo tr:first-child>*{border-top:3px solid var(--murekkep)}
+
+/* =====================================================================
+   (b) ANA SAYFA — SATIN AL BÖLÜMÜ (künye ile altbilgi arası)
+   ===================================================================== */
+.raf-ev{--kutu-w:260px;--raf-ara:clamp(12px,3vw,48px);--tutar:clamp(28px,3vw,44px);--temas:rgba(34,26,74,.42);
+  background:var(--safran);color:var(--murekkep);padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(120px,12vw,180px)}
+.raf-ev__ust,.raf-ev__alt{display:grid;gap:24px}
+@media (min-width:1100px){
+  .raf-ev__ust,.raf-ev__alt{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+  .raf-ev__metin,.raf-ev__dipnot{grid-column:1 / span 5}
+  .raf-ev__ust .raf__sahne,.raf-ev__alt .raf__etiketler{grid-column:7 / span 6}
+  .raf-ev__ust{align-items:end}
+  .raf-ev__metin{align-self:start}
+}
+.raf-ev__baslik{display:inline-flex;align-items:center;gap:.28em;text-decoration:none;color:var(--murekkep)}
+.raf-ev__baslik:hover{color:var(--murekkep)}
+.raf-ev__ok{display:inline-grid;place-items:center;width:.82em;height:.82em;border-radius:50%;background:var(--murekkep);transition:translate .3s cubic-bezier(.2,.8,.2,1)}
+.raf-ev__ok svg{width:46%;height:46%}
+.raf-ev__baslik:hover .raf-ev__ok,.raf-ev__baslik:focus-visible .raf-ev__ok{translate:8px 0}
+.raf-ev__metin .giris{margin:0;max-width:30ch}
+.raf-ev .raf__cizgi{height:4px;background:var(--murekkep);margin-top:0}
+.raf-ev__ust{margin-bottom:0}
+.raf-ev .etiket-fiyat{background:var(--murekkep);color:var(--krem);border-radius:0 0 18px 18px;padding:14px 18px 18px}
+.raf-ev .etiket-fiyat:hover{background:#2E2463}
+.raf-ev .etiket-fiyat .ustbilgi{color:var(--safran)}
+.raf-ev .etiket-fiyat__not{font-size:14px}
+.raf-ev .etiket-fiyat .ustbilgi{min-height:3.1em;letter-spacing:.1em}
+.raf-ev__dipnot{margin:0;padding-top:22px;align-self:start;display:flex;align-items:center;font-size:16px;font-weight:700}
+.raf-ev .pip{background:var(--murekkep);box-shadow:0 0 0 4px rgba(34,26,74,.18)}
+@media (max-width:1099px){
+  .raf-ev__metin{margin-bottom:32px}
+  .raf-ev__dipnot{order:2;padding-top:24px}
+}
+
+/* mobil ince ayar (390 px referans) */
+@media (max-width:759px){
+  .raf-ev{--kutu-w:160px}
+  .etiket-fiyat .ustbilgi{font-size:11px;letter-spacing:.08em;min-height:3.1em}
+  .raf-ev .etiket-fiyat__not{font-size:13px}
+  .raf__durum{flex-direction:column;font-size:15px}
+  .adimlar>li{padding-left:56px;font-size:16px}
+  .odeme-bilgi{margin-left:0}
+  .dugme--kapali{width:100%}
+  .sa-tablo th{width:44%}
+}
+
+/* =====================================================================
+   SICAK SAHNE — IE-2026-10-10-005 · art direktör · 10 Ekim 2026
+   Fikir: "sabah tezgâhı". Gece paneli kalktı. Raf, sayfanın kendi kreminden
+   doğan bir güneşin önünde duran sıcak bir tezgâha dönüştü. Işık soldan-
+   üstten (render anahtar ışığıyla aynı yön); gölgeler sağa düşer.
+   ===================================================================== */
+.sahne{--kutu-w:400px;--raf-ara:clamp(16px,6vw,112px);--tutar:clamp(30px,4.6vw,68px);--gunes:clamp(300px,42vw,540px);--tezgah-ust:clamp(28px,3.4vw,46px);
+  position:relative;overflow:hidden;color:var(--murekkep);
+  background:linear-gradient(180deg,var(--krem) 0%,#FFEFD2 46%,#FFE2B4 100%);
+  margin-top:clamp(8px,1.4vw,20px)}
+/* güneş: kutuların arasında, ikisine eşit uzaklıkta; tezgâhın ardından doğar */
+.sahne__gunes{position:absolute;left:50%;bottom:calc(var(--gunes) * -.30);z-index:0;width:var(--gunes);height:var(--gunes);margin-left:calc(var(--gunes) / -2);border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,#FFC24A 0%,var(--safran) 58%,#FFA826 70%,rgba(255,168,38,0) 71%)}
+.sahne__gunes::before{content:"";position:absolute;inset:-22%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,185,48,.34),rgba(255,185,48,.12) 62%,rgba(255,185,48,0))}
+.sahne__ic{position:relative;padding-top:clamp(24px,3vw,40px)}
+.sahne .raf__sahne{position:relative;z-index:2}
+.sahne .raf__urun{margin-bottom:calc(var(--tezgah-ust) * -.55)}
+.sahne .raf__urun img{filter:drop-shadow(0 2px 1px rgba(90,40,0,.35))}
+/* temas gölgesi: dar, koyu, sıcak */
+.sahne .raf__urun::after{left:0;right:2%;bottom:-5px;height:14px;background:radial-gradient(closest-side,rgba(84,36,2,.7),rgba(84,36,2,0))}
+/* düşen gölge: anahtar ışık sol-önden-üstten → gölge kutunun altından öne-sağa, tezgâh yüzeyinde */
+.sahne .raf__urun::before{content:"";position:absolute;z-index:0;left:6%;right:-10%;bottom:calc(var(--tezgah-ust) * -.62);height:calc(var(--tezgah-ust) * .7);
+  background:linear-gradient(180deg,rgba(130,62,6,.5),rgba(130,62,6,0));
+  transform:skewX(32deg);transform-origin:0 0;filter:blur(5px);border-radius:4px 4px 30px 30px}
+/* tezgâh */
+.tezgah{position:relative;z-index:1}
+.tezgah__on{background:linear-gradient(180deg,#FFAE2A 0%,#F39A1B 100%)!important}
+.tezgah__ust{height:var(--tezgah-ust);background:linear-gradient(180deg,#F0CF96 0%,#F6DCAA 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55)}
+.tezgah__on{position:relative;background:linear-gradient(180deg,var(--safran) 0%,#F5A41F 100%);padding-bottom:clamp(34px,4vw,56px);
+  box-shadow:inset 0 3px 0 #FFD27A}
+.tezgah__on::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:#E08F14}
+.sahne{--tezgah-on:calc(var(--tutar) * 2.6 + 120px)}
+.sahne .raf__etiketler{position:relative}
+.sahne .etiket-fiyat{background:var(--krem);color:var(--murekkep);border-radius:0 0 20px 20px;
+  padding:clamp(16px,1.8vw,24px) clamp(14px,2vw,28px) clamp(18px,2vw,26px);
+  box-shadow:0 2px 0 rgba(150,74,10,.18),0 18px 30px -12px rgba(150,74,10,.55)}
+.sahne .etiket-fiyat::before{content:"";display:block;height:3px;margin:calc(-1 * clamp(16px,1.8vw,24px)) calc(-1 * clamp(14px,2vw,28px)) clamp(14px,1.6vw,20px);background:rgba(150,74,10,.22)}
+.sahne .etiket-fiyat .ustbilgi{color:#9A4F0C}
+/* durum satırı tezgâhın önünde, kâğıt zeminde */
+.sahne__alt{background:var(--krem)}
+.sahne .raf__durum{margin-top:0;border-top:0;padding-top:clamp(20px,2.4vw,30px);padding-bottom:4px;color:var(--murekkep)}
+.sahne .raf__durum .durum-not{color:var(--murekkep)}
+.sahne .raf__durum .durum-not strong{color:var(--murekkep)}
+.sahne .raf__durum .durum-kargo{color:var(--murekkep)}
+.sahne .raf__durum .durum-kargo .ustbilgi{color:#9A4F0C}
+.sahne .pip{background:var(--safran);box-shadow:0 0 0 4px rgba(255,185,48,.3)}
+
+/* hareket: güneş bir kez doğar, gölgeler kısalır — ışığın gelişi, süs değil */
+@media (prefers-reduced-motion:no-preference){
+  .js .sahne__gunes{translate:0 22%;opacity:.0;transition:translate 2.2s cubic-bezier(.16,.9,.24,1),opacity 1.2s ease}
+  .js .sahne.asili .sahne__gunes{translate:0 0;opacity:1}
+  .js .sahne .raf__urun::before{scale:1.7 1;opacity:.5;transition:scale 2.2s cubic-bezier(.16,.9,.24,1),opacity 2.2s ease}
+  .js .sahne.asili .raf__urun::before{scale:1 1;opacity:1}
+}
+@media (max-width:759px){
+  .sahne__ic{padding-top:56px}
+  .sahne{--kutu-w:170px;--gunes:250px;--tezgah-ust:22px;--tezgah-on:calc(var(--tutar) * 2.6 + 150px)}
+  .sahne .etiket-fiyat__not{font-size:13px}
+  .sahne .raf__urun::before{right:-20%}
+}
+
+
+/* KESİT (b) — ana sayfa: aynı sabah tezgâhı. Sayfa safran güneşle açılır, safran güneş + safran tezgâhla kapanır. */
+.sahne--ev{--kutu-w:260px;--raf-ara:clamp(12px,3vw,48px);--tutar:clamp(28px,3vw,44px);--gunes:clamp(260px,30vw,400px);--tezgah-ust:clamp(22px,2.6vw,36px);
+  padding:0;margin-top:0;background:linear-gradient(180deg,var(--krem) 0%,#FFEFD2 50%,#FFE2B4 100%)}
+.sahne--ev .sahne__ic{padding-top:clamp(56px,7vw,104px)}
+.sahne--ev .raf-ev__ust{margin-bottom:0}
+.raf-ev__sutun{position:relative}
+.sahne--ev .etiket-fiyat{background:var(--krem);color:var(--murekkep);border-radius:0 0 18px 18px;padding:14px 18px 18px;transition:translate .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+.sahne--ev .etiket-fiyat::before{margin:-14px -18px 12px}
+.sahne--ev .etiket-fiyat:hover{background:var(--krem);translate:0 3px;box-shadow:0 2px 0 rgba(150,74,10,.18),0 24px 34px -12px rgba(150,74,10,.6)}
+.sahne--ev .etiket-fiyat .ustbilgi{color:#9A4F0C}
+.sahne--ev .tezgah__on{padding-bottom:clamp(120px,12vw,180px)}
+.sahne--ev .raf-ev__dipnot{color:var(--murekkep)}
+.sahne--ev .pip{background:var(--murekkep);box-shadow:0 0 0 4px rgba(34,26,74,.18)}
+@media (min-width:1100px){.raf-ev__ust .raf-ev__sutun{grid-column:7 / span 6}}
+/* gece ufku tezgâhın üstüne yükselir: altbilgi dalgası safran tezgâhı örter */
+main:has(.sahne--ev) + .altbilgi{z-index:2}
+.sahne--ev .tezgah__on::after{display:none}
+@media (max-width:759px){.sahne--ev{--kutu-w:160px;--gunes:240px;--tezgah-ust:20px}}
+
+/* ---------- yayın uyarlamaları (IE-2026-10-10-015) ---------- */
+/* gezinme: "Satın al" dolu hap, SSS düz bağlantı — yalnız CSS; sayfa HTML'leri değişmez */
+.gezinme__linkler a.sss-link{background:transparent;color:inherit}
+.gezinme__linkler a.sss-link:hover,.gezinme__linkler a.sss-link[aria-current=page]{background:rgba(34,26,74,.08);color:var(--murekkep)}
+.gezinme__linkler a[href="satin-al.html"][aria-current=page]{background:var(--murekkep);color:var(--krem)}
+/* ana sayfa etiketleri <a> içinde span */
+.etiket-fiyat>span{display:block}
+.etiket-fiyat>.ustbilgi{margin:0}
+/* önizlemedeki style="border-bottom:0" yerine */
+.sa-modul--son{border-bottom:0}
+/* onay satırı: form öğesi yok; taslaktaki ☐ glifi görünür kutu olarak durur */
+.onay{cursor:default}
+.onay__kutu{flex:none;font-size:26px;line-height:1;opacity:.55}
+/* sayfanın yasal alt bölümü: üst modüllerle aynı ızgarada, sağ sütunda */
+.sa-yasal{padding-bottom:clamp(48px,6vw,88px)}
+.sa-yasal .kap{max-width:1440px}
+@media (min-width:1100px){
+  .sa-yasal .kap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+  .sa-yasal .kap>*{grid-column:6 / span 7}
+  .sa-yasal .kap>.yasal__h2{grid-column:1 / span 4;margin-top:56px}
+  /* yan başlık ile sağ sütundaki ilk öğe aynı satırda, aynı üst hizada başlar */
+  .sa-yasal .kap>.yasal__h2+*{margin-top:62px}
+  .sa-yasal .kap>.yasal__h2:first-child{margin-top:0}
+  .sa-yasal .kap>.yasal__h2:first-child+*{margin-top:6px}
+}
+.sa-yasal .kap>.yasal__h2:first-child{margin-top:0}
+/* etiket tabloları (başlıklı) mobilde de tablo kalır: sütun başlığı kaybolmaz */
+@media (max-width:599px){
+  .sa-yasal .yasal-tablo:has(thead){display:table;width:100%}
+  .sa-yasal .yasal-tablo:has(thead) thead{display:table-header-group}
+  .sa-yasal .yasal-tablo:has(thead) tbody{display:table-row-group}
+  .sa-yasal .yasal-tablo:has(thead) tr{display:table-row}
+  .sa-yasal .yasal-tablo:has(thead) th,.sa-yasal .yasal-tablo:has(thead) td{display:table-cell;padding:10px 10px;font-size:14px;overflow-wrap:normal}
+  .sa-yasal .yasal-tablo:has(thead) thead th{font-size:10px;letter-spacing:.04em}
+}
