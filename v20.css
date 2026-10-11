@@ -1,0 +1,57 @@
+/* LIVEXA ana sayfa v20 · YAYIN · IE-2026-10-11-075 · insanlı yaşam bandı (bolum-yasam).
+   Yön notu: 99-arsiv/onizleme/2026-10-11-insanli-yasam-yon-notu.md §2, §5, §7. v19.css'in üstüne biner.
+   Kamera sabit: zum, Ken Burns, paralaks, kayma yok. Tek hareket kaydırmaya bağlı doğrusal bindirme (opacity).
+   Sabitleme yalnız JS (html.js) + hareket izniyle; aksi hâlde ızgara/yığın, her görselin altında not. */
+
+.v20-yasam{background:var(--sahne-krem);padding:var(--v20-bosluk,100vh) 0 0;margin:0;position:relative}
+.v20-yasam__yuva{font-size:20px;line-height:1.4;margin:0;padding:0 var(--kap-pad) 16px;color:var(--murekkep)}
+.v20-kare{margin:0}
+.v20-kare__gorsel{position:relative;overflow:hidden;background:var(--sahne-krem)}
+.v20-kare__gorsel picture,.v20-kare__gorsel img{display:block;width:100%;height:100%}
+.v20-kare__gorsel img{object-fit:cover;object-position:50% 55%}
+/* Yapay zekâ notu: 14 px, mürekkep %72 (krem üstünde ≈ 5,7:1) */
+.v20-ainot{font-size:14px;line-height:1.4;color:rgba(34,26,74,.72);margin:0}
+.v20-yasam__ilerleme{display:none}
+
+/* Mobil yapışkan çubuk bu bantta gizli (yön notu §2) */
+.uo-cubuk.v20-gizli{transform:translateY(110%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s}
+
+/* ---------- Azaltılmış hareket ya da JS yok: masaüstü 2×2 ızgara, mobil dikey yığın ---------- */
+.v20-yasam__iz{padding-bottom:var(--bolum-y)}
+.v20-yasam__yuva{max-width:1440px;margin:0 auto;box-sizing:border-box}
+.v20-yasam__kareler{display:grid;grid-template-columns:1fr;gap:32px;padding-inline:var(--kap-pad);max-width:1440px;margin:0 auto;box-sizing:border-box}
+.v20-kare__gorsel{aspect-ratio:4/5}
+.v20-ainot{margin-top:10px}
+@media (min-width:1100px){
+  .v20-yasam__kareler{grid-template-columns:1fr 1fr;gap:40px 24px}
+  .v20-kare__gorsel{aspect-ratio:16/9}
+}
+
+/* ---------- Hareket: sabitlenen bant, kilitli kamera, bindirme ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* Sabit kaydırma mesafesi masaüstü 320vh (40 bekleme + 3 × 80 geçiş + 40 bekleme), mobil 260vh; + görünür alan (v19 sofra kalıbı) */
+  .js .v20-yasam__iz{height:calc(420vh - var(--v18-ust));padding-bottom:0}
+  .js .v20-yasam__sabit{position:sticky;top:var(--v18-ust);height:calc(100vh - var(--v18-ust));display:flex;flex-direction:column;padding-top:20px;box-sizing:border-box;overflow:hidden}
+  .js .v20-yasam__yuva{max-width:none;margin:0;flex:none}
+  .js .v20-yasam__kareler{display:block;position:relative;flex:1 1 auto;min-height:0;max-width:none;margin:0;padding:0}
+  .js .v20-kare{position:absolute;inset:0;display:flex;flex-direction:column}
+  .js .v20-kare__gorsel{flex:1 1 auto;min-height:0;aspect-ratio:auto}
+  .js .v20-kare:not(:first-child){padding-bottom:44px;pointer-events:none}
+  .js .v20-kare:not(:first-child) .v20-kare__gorsel{opacity:0}
+  /* Tek not: ilk karenin notu, dört kare boyunca karenin altında sabit; diğer üçü bu kipte gösterilmez */
+  .js .v20-kare:not(:first-child) .v20-ainot{display:none}
+  .js .v20-ainot{flex:none;height:44px;margin:0;display:flex;align-items:center;padding-left:calc(var(--kap-pad) + 178px + 24px)}
+  .js .v20-yasam__ilerleme{display:flex;gap:6px;align-items:center;position:absolute;left:var(--kap-pad);bottom:0;height:44px;z-index:1}
+  .js .v20-yasam__ilerleme i{width:40px;height:3px;background:rgba(34,26,74,.15)}
+  .js .v20-yasam__ilerleme i.dolu{background:var(--murekkep)}
+}
+@media (max-width:1099px) and (prefers-reduced-motion:no-preference){
+  .js .v20-yasam__iz{height:calc(360vh - var(--v18-ust))}
+  .js .v20-yasam{--v20-h:min(125vw,calc(100svh - var(--v18-ust) - 150px))}
+  .js .v20-yasam__sabit{justify-content:center;padding-top:0}
+  .js .v20-yasam__kareler{flex:none;height:calc(var(--v20-h) + 64px)}
+  .js .v20-kare__gorsel{flex:none;height:var(--v20-h);width:calc(var(--v20-h) * .8);margin-inline:auto}
+  .js .v20-kare:not(:first-child){padding-bottom:64px}
+  .js .v20-ainot{height:64px;align-items:flex-end;padding:0 0 10px max(var(--kap-pad),calc((100% - var(--v20-h) * .8) / 2))}
+  .js .v20-yasam__ilerleme{bottom:auto;top:calc(var(--v20-h) + 12px);height:3px;left:max(var(--kap-pad),calc((100% - var(--v20-h) * .8) / 2))}
+}
