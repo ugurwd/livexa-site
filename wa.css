@@ -1,0 +1,13 @@
+/* LIVEXA · sabit WhatsApp düğmesi · IE-2026-10-12-104 · bütün sayfalar (wa.css).
+   Yalnız ikon; görünür etiket, ipucu, ön doldurulmuş mesaj yok. Erişilebilir ad satın al v15 mikro metin tablosundan.
+   Zemin mürekkep #221A4A, glif krem #FFF4DF (≈15:1); koyu yüzeylerde ayrım için 2 px krem halka.
+   Mobil yapışkan çubuk görünürken --wa-alt (wa.js) ile çubuğun üstüne kayar.
+   Beyan bölümü, zorunlu metin ya da açık mobil menü görünürken gizlenir (.wa-dugme--gizli, wa.js / :has). */
+.wa-dugme{position:fixed;z-index:19;right:calc(16px + env(safe-area-inset-right));bottom:var(--wa-alt,calc(16px + env(safe-area-inset-bottom)));width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--murekkep,#221A4A);color:var(--krem,#FFF4DF);box-shadow:0 0 0 2px var(--krem,#FFF4DF),0 6px 18px rgba(34,26,74,.28);text-decoration:none;opacity:1;visibility:visible;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear 0s,background-color .18s ease,color .18s ease}
+.wa-dugme svg{width:28px;height:28px;display:block}
+.wa-dugme:hover{background:var(--mandalina,#FF7A45);color:var(--murekkep,#221A4A)}
+.wa-dugme:focus-visible{outline:3px solid var(--mandalina-metin,#C2440F);outline-offset:3px}
+.wa-dugme--gizli,body:has(#menu-dugme[aria-expanded="true"]) .wa-dugme{opacity:0;visibility:hidden;pointer-events:none;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear .2s}
+@media (min-width:1024px){.wa-dugme{right:calc(28px + env(safe-area-inset-right));bottom:var(--wa-alt,calc(28px + env(safe-area-inset-bottom)))}}
+@media (prefers-reduced-motion:reduce){.wa-dugme,.wa-dugme--gizli,body:has(#menu-dugme[aria-expanded="true"]) .wa-dugme{transition:none}}
+@media print{.wa-dugme{display:none!important}}
