@@ -24,6 +24,7 @@
 <link rel="preload" href="font/nunito-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="font/nunito-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="v24.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFB930'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF7A45'/%3E%3C/svg%3E">
 </head>
 <body data-odeme="kapali">
@@ -34,17 +35,16 @@
     <a class="gezinme__marka" href="index.html"><span class="gezinme__logo">LIVE<span class="x">X</span>A</span> <span class="gezinme__alt">STARS FARMA</span></a>
     <button type="button" class="menu-dugme" id="menu-dugme" aria-expanded="false" aria-controls="gezinme-listesi"><span data-mikro="menu-ac">Menü</span><span data-mikro="menu-kapat" hidden>Kapat</span></button>
     <div class="gezinme__linkler" id="gezinme-listesi">
-      <a href="index.html#bolum-02-beyan">Beyanlar</a>
-      <a href="index.html#bolum-03-seffaflik">Bileşen tablosu</a>
-      <a href="index.html#bolum-04-kullanim">Kullanım ve uyarılar</a>
-      <a href="index.html#bolum-05-kunye">Künye</a>
-      <a class="sss-link" href="sss.html">Sık sorulan sorular</a>
-      <a href="satin-al.html" aria-current="page">Satın al</a>
+      <a href="index.html#bolum-04-kullanim">Nasıl kullanılır</a>
+      <a href="index.html#bolum-03-seffaflik">İçinde ne var</a>
+      <a href="index.html#bolum-02-beyan">Dört bileşen ne yapar</a>
+      <a href="sss.html">Sık sorulanlar</a>
+      <a href="satin-al.html" class="gezinme__al" aria-current="page">Satın al</a>
     </div>
   </div>
 </nav>
 
-<main id="ana" tabindex="-1" class="sa">
+<main id="ana" tabindex="-1" class="sa sa-v24">
   <div class="kap uo-urun dn-urun">
     <h1 class="uo-al__ust">Satın al</h1>
     <div class="uo-urun__galeri dn-galeri" id="galeri">
@@ -67,7 +67,7 @@
         <button type="button" class="dn-kucuk" data-i="5" aria-label="Görsel 6" aria-pressed="false"><picture><source type="image/avif" srcset="gorsel/sa-galeri-06-makro-braille-480.avif"><img src="gorsel/sa-galeri-06-makro-braille-480.webp" width="480" height="348" alt="" loading="lazy" decoding="async"></picture></button>
       </div>
     </div>
-    <div class="uo-al dn-al">
+    <div class="uo-al dn-al" id="sa-karar">
       <div class="hero__haplar dn-al__haplar">
         <span class="hap"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>SABAH SAŞE</span>
         <span class="hap hap--gece"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span>
@@ -100,6 +100,72 @@
       <p class="zorunlu uo-al__zorunlu">Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz.</p>
     </div>
   </div>
+
+<section class="sa-satis sa-kul" id="sa-kullanim" aria-labelledby="sa-kullanim-h">
+  <div class="kap">
+    <h2 class="sa-satis__h2" id="sa-kullanim-h">Nasıl kullanılır</h2>
+    <div class="sa-kul__kart">
+      <div class="sa-kul__yari sa-kul__yari--sabah"><span class="hap hap--acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>SABAH SAŞE</span><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 saşenin 1 bardak suya (200ml) karıştırılmasıyla kullanılması önerilir."</p></div>
+      <div class="sa-kul__yari sa-kul__yari--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 kere 1 tablet kullanılması önerilir."</p></div>
+    </div>
+    <div class="sa-kul__alt">
+      <p class="sa-kul__saat">Günün hangi saatinde ya da hangi öğünde kullanılacağına dair bir talimat ambalajda yer almaz.</p>
+      <p class="sa-kul__porsiyon">Günlük porsiyon: 1 saşe + 1 tablet</p>
+      <p class="sa-kul__not">Tavsiye edilen günlük porsiyonu aşmayın.</p>
+      <p class="sa-kul__not">11 yaş ve üzeri kullanım için uygundur.</p>
+      <p class="sa-kul__not">Tirozin metabolizma bozukluğu olan kişiler tarafından kullanılmamalıdır.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sa-satis sa-icerik" id="sa-icerik" aria-labelledby="sa-icerik-h">
+  <div class="kap sa-icerik__izgara">
+    <h2 class="sa-satis__h2" id="sa-icerik-h">İçinde ne var</h2>
+    <p class="sa-icerik__buyuk">Kutuda 30 saşe ve 30 tablet bulunur.</p>
+    <div class="sa-icerik__sag">
+      <p>Sabah saşesinde yedi, akşam tabletinde dokuz bileşen miktarıyla birlikte etikette yazılıdır. Gizlenen bileşen ya da açıklanmayan miktar yoktur.</p>
+      <p><a class="sa-ok" href="index.html#bolum-03-seffaflik">Formülün tamamı, dozuyla →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sa-satis sa-beyan" id="sa-beyan" aria-labelledby="sa-beyan-h">
+  <div class="kap">
+    <h2 class="sa-satis__h2" id="sa-beyan-h">Dört bileşen ne yapar</h2>
+    <p class="sa-beyan__giris">Formüldeki bileşenlerden dördü, porsiyon başına düşen miktarıyla resmî beyan koşulunu karşılar. Krom yalnızca <strong>sabah saşesinde</strong>; kolin, selenyum ve B6 vitamini yalnızca <strong>akşam tabletinde</strong> bulunur.</p>
+    <ul class="sa-kartlar">
+      <li class="sa-kart sa-kart--sabah"><span class="hap hap--acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>SABAH SAŞE</span><h3 class="sa-kart__ad">KROM</h3><p class="sa-kart__miktar">200 mcg / saşe</p><ul class="sa-kart__cumleler"><li>"Krom normal makro besin ögeleri metabolizmasına katkıda bulunur."</li></ul></li>
+      <li class="sa-kart sa-kart--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><h3 class="sa-kart__ad">KOLİN</h3><p class="sa-kart__miktar">150 mg / tablet</p><ul class="sa-kart__cumleler"><li>"Kolin normal karaciğer fonksiyonunun korunmasına katkıda bulunur."</li></ul></li>
+      <li class="sa-kart sa-kart--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><h3 class="sa-kart__ad">SELENYUM</h3><p class="sa-kart__miktar">55 mcg / tablet</p><ul class="sa-kart__cumleler"><li>"Selenyum hücrelerin oksidatif stresten korunmasına katkıda bulunur."</li><li>"Selenyum bağışıklık sisteminin normal fonksiyonuna katkıda bulunur."</li></ul></li>
+      <li class="sa-kart sa-kart--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><h3 class="sa-kart__ad">B6 VİTAMİNİ</h3><p class="sa-kart__miktar">1,4 mg / tablet</p><ul class="sa-kart__cumleler"><li>"B6 vitamini normal enerji oluşum metabolizmasına katkıda bulunur."</li><li>"B6 vitamini yorgunluk ve bitkinliğin azalmasına katkıda bulunur."</li></ul></li>
+    </ul>
+    <p class="sa-beyan__geri">Geri kalan bileşenler hakkında hiçbir sağlık beyanı yapılmaz.</p>
+    <div class="sa-dipnot">
+      <p>Beyanların geçerli olduğu tüketim miktarı: kolin, selenyum ve B6 vitamini için günde 1 tablet; krom için günde 1 saşe.</p>
+      <p>Takviye edici gıdalar normal beslenme yerine geçemez. Dengeli ve çeşitli beslenme ile sağlıklı bir yaşam tarzı önemlidir.</p>
+      <p>Kaynak: TİTCK, Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Kullanımı Kılavuzu, Ek-1.</p>
+      <p class="sa-dipnot__bag"><a class="sa-ok" href="index.html#bolum-02-beyan">Beyanların tamamı →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sa-satis sa-sss" id="sa-sss" aria-labelledby="sa-sss-h">
+  <div class="kap sa-sss__izgara">
+    <h2 class="sa-satis__h2" id="sa-sss-h">Sık sorulanlar</h2>
+    <div class="sa-sss__liste">
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Saşe ve tabletin ikisi de aynı gün mü kullanılır?</h3><p class="sa-sss__cevap">Etiket iki ayrı günlük miktar verir: günde 1 saşe ve günde 1 tablet. İkisi bir günlük kullanımı birlikte oluşturur.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Günde birden fazla saşe veya tablet alınabilir mi?</h3><p class="sa-sss__cevap">Hayır. Etiket günde 1 saşe ve günde 1 tablet verir. Tavsiye edilen günlük porsiyonu aşmayın.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">LIVEXA ilaç mı?</h3><p class="sa-sss__cevap">Hayır. Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz. Takviye edici gıdalar normal beslenme yerine geçemez. Hastalık veya ilaç kullanılması durumunda doktorunuza danışın.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">2'li paket nasıl gönderilir?</h3><p class="sa-sss__cevap">2'li paket tek koli ile gönderilir.</p></div>
+      <p class="sa-sss__tum"><a class="sa-ok" href="sss.html">Bütün sorular →</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="sa-kapanis">
+  <div class="uo-gunes" aria-hidden="true"></div>
+  <a class="dugme sa-kapanis__dugme" href="#sa-karar">Satın al</a>
+</div>
 
   <div class="kap">
     <section class="sa-akis" aria-labelledby="sa-akis-baslik">
@@ -223,6 +289,7 @@
         <a href="gizlilik-ve-cerez.html">Çerez Tercihleri</a>
         <a href="iletisim.html">İletişim</a>
         <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="index.html#bolum-05-kunye">Künye</a>
         <a href="satin-al.html">Satın al</a>
         <a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a>
         <a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a>
@@ -284,6 +351,7 @@
 </script>
 <script src="app.js" defer></script>
 <script src="donusum.js" defer></script>
+<script src="v24.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "496e7e88896e4d18872900271c8b6db5"}'></script>
 </body>
 </html>

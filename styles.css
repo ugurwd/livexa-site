@@ -66,7 +66,7 @@ section[id],header[id],main[id]{scroll-margin-top:calc(var(--bant-h) + var(--gez
 .ustbilgi{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .vurgu{color:var(--mandalina)}
 .vurgu--nane{color:var(--nane-koyu)}
-.zorunlu{font-size:14px;line-height:1.55;margin:0 0 .6em}
+.zorunlu{font-size:15px;line-height:1.55;margin:0 0 .6em}
 .kucuk{font-size:14px}
 
 /* rozet: [TEYİT: …] görünür kalır (konsept §7.4). Onay imi, mühür yok. */
@@ -297,7 +297,7 @@ table.kunye{border-collapse:collapse;width:100%;font-size:15px}
 .altbilgi__izgara{display:grid;gap:28px 64px}
 @media (min-width:900px){.altbilgi__izgara{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:start}}
 .altbilgi__zorunlu{border:1.5px solid rgba(255,185,48,.55);border-radius:24px;padding:clamp(20px,2.2vw,28px);background:rgba(255,244,223,.04)}
-.altbilgi .zorunlu{color:var(--krem);font-size:14px}
+.altbilgi .zorunlu{color:var(--krem);font-size:15px}
 .altbilgi .zorunlu:first-child{font-size:15px;font-weight:700}
 .altbilgi .zorunlu:last-child{margin:0}
 .kunye-metin{color:rgba(255,244,223,.78)}
@@ -568,10 +568,7 @@ html.lenis,html.lenis body{height:auto}
 .kunye thead th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding-top:0}
 
 /* Satın al sayfası alt modülleri + gezinme hapı. Kaynak: v11 sabah tezgâhı katmanından (IE-2026-10-10-015) kalanlar; v3 (IE-2026-10-10-025) ile raf/tezgâh kuralları çıkarıldı. */
-/* gezinme: Satın al dolu hap, SSS düz bağlantı (hiyerarşi düzeltmesi) */
-.gezinme__linkler a[href="satin-al.html"]{background:var(--murekkep);color:var(--krem)}
-.gezinme__linkler a[href="satin-al.html"]:hover{background:var(--mandalina);color:var(--murekkep)}
-@media (min-width:1100px){.gezinme__linkler a[href="satin-al.html"]::after{display:none}}
+/* gezinme kuralları: gezinme-v24.css (IE-2026-10-12-090; tek hap, safran). */
 .pip{display:inline-block;flex:none;width:10px;height:10px;border-radius:50%;background:var(--safran);box-shadow:0 0 0 4px rgba(255,185,48,.25);margin-right:10px;vertical-align:.05em}
 
 .sa{padding-top:clamp(16px,2vw,28px)}
@@ -612,10 +609,6 @@ html.lenis,html.lenis body{height:auto}
   .sa-tablo th{width:44%}
 }
 /* ---------- yayın uyarlamaları (IE-2026-10-10-015) ---------- */
-/* gezinme: "Satın al" dolu hap, SSS düz bağlantı — yalnız CSS; sayfa HTML'leri değişmez */
-.gezinme__linkler a.sss-link{background:transparent;color:inherit}
-.gezinme__linkler a.sss-link:hover,.gezinme__linkler a.sss-link[aria-current=page]{background:rgba(34,26,74,.08);color:var(--murekkep)}
-.gezinme__linkler a[href="satin-al.html"][aria-current=page]{background:var(--murekkep);color:var(--krem)}
 /* önizlemedeki style="border-bottom:0" yerine */
 .sa-modul--son{border-bottom:0}
 /* sayfanın yasal alt bölümü: üst modüllerle aynı ızgarada, sağ sütunda */
@@ -1055,3 +1048,37 @@ body[data-odeme="acik"] #odeme-dugme[aria-disabled="true"],body[data-odeme="acik
 .dn-isik__dugme--sonraki{right:16px;top:50%;margin-top:-22px}
 .dn-isik__kapat{display:flex;align-items:center;justify-content:center;padding:0}
 .dn-isik__kapat svg{width:22px;height:22px}
+
+/* Ortak gezinme · IE-2026-10-12-090 · yön notu 2026-10-12-menu-ve-yasal §3 U6. Bütün sayfalarda (styles.css'in sonuna eklenir).
+   Masaüstü ≥ 1024 px: logo | bağlantılar (15 px / 700, ayraçsız) | tek hap "Satın al" (safran, 44 px).
+   Kaydırma takibi: içinde bulunulan bölümün bağlantısı aria-current="true" ile kalıcı alt çizgi taşır (v24.js).
+   Mobil < 1024 px: "Menü" düğmesi; panel içerik kadar, düz liste (display 22 px / 800, 56 px satır, 1 px ayraç),
+   en altta tam genişlik safran "Satın al" (56 px); 3 px mürekkep alt sınır korunur.
+   Alt çizgi rengi #C2440F: kontrast.css kuralı (mandalina #FF7A45 krem üstünde 4,5:1'i tutmaz). */
+
+.gezinme__linkler a.gezinme__al::after{display:none!important}
+
+@media (min-width:1024px){
+  .menu-dugme{display:none}
+  .gezinme__linkler{display:flex;position:static;flex-direction:row;align-items:center;padding:0;gap:0;border:0;background:transparent;max-height:none;overflow:visible}
+  .gezinme__linkler a{position:relative;font-family:var(--sans);font-size:15px;font-weight:700;line-height:1.2;padding:11px 14px;border-radius:0;background:transparent;color:var(--murekkep);text-decoration:none;border:0}
+  .gezinme__linkler a:not(.gezinme__al)::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;border-radius:2px;background:#C2440F;scale:0 1;transform-origin:left;transition:scale .3s cubic-bezier(.2,.8,.2,1)}
+  .gezinme__linkler a:not(.gezinme__al):hover,.gezinme__linkler a:not(.gezinme__al)[aria-current]{background:transparent;color:var(--murekkep)}
+  .gezinme__linkler a:not(.gezinme__al):hover::after,
+  .gezinme__linkler a:not(.gezinme__al)[aria-current="true"]::after,
+  .gezinme__linkler a:not(.gezinme__al)[aria-current="page"]::after{scale:1 1}
+  .gezinme__linkler a.gezinme__al{display:inline-flex;align-items:center;height:44px;margin-left:14px;padding:0 24px;border-radius:999px;background:var(--safran);color:var(--murekkep);font-weight:800}
+  .gezinme__linkler a.gezinme__al:hover,.gezinme__linkler a.gezinme__al[aria-current="page"]:hover{background:var(--mandalina);color:var(--murekkep)}
+  .gezinme__linkler a.gezinme__al[aria-current="page"]{background:var(--safran);color:var(--murekkep)}
+}
+
+@media (max-width:1023px){
+  .menu-dugme{display:inline-flex;align-items:center}
+  .gezinme__linkler{display:none;position:absolute;left:0;right:0;top:var(--gez-h);flex-direction:column;gap:0;padding:4px var(--kap-pad) 20px;background:var(--krem);border-bottom:3px solid var(--murekkep);max-height:calc(100dvh - var(--gez-h));overflow-y:auto}
+  .gezinme__linkler.acik{display:flex}
+  .gezinme__linkler a{display:flex;align-items:center;min-height:56px;padding:0;border-radius:0;border-bottom:1px solid rgba(34,26,74,.12);background:transparent;color:var(--murekkep);font-family:var(--disp);font-size:22px;font-weight:800;line-height:1.1;letter-spacing:-.01em;text-decoration:none}
+  .gezinme__linkler a:hover,.gezinme__linkler a[aria-current]{background:transparent;color:var(--murekkep)}
+  .gezinme__linkler a:not(.gezinme__al)[aria-current="true"],.gezinme__linkler a:not(.gezinme__al)[aria-current="page"]{text-decoration:underline;text-decoration-color:#C2440F;text-decoration-thickness:2px;text-underline-offset:.22em}
+  .gezinme__linkler a.gezinme__al{justify-content:center;margin-top:16px;min-height:56px;border:0;border-radius:999px;background:var(--safran);font-family:var(--sans);font-size:17px;letter-spacing:0}
+  .gezinme__linkler a.gezinme__al:hover{background:var(--mandalina)}
+}

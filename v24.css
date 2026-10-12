@@ -1,0 +1,133 @@
+/* LIVEXA v24 · YAYIN · IE-2026-10-12-090 · yön notu 99-arsiv/onizleme/2026-10-12-menu-ve-yasal-yon-notu.md
+   Ana sayfa (v19.css + v22.css'ten sonra) ve satın al sayfasında yüklenir. Metin üretmez, metin gizlemez, katlamaz.
+   Zorunlu/yasal metin hiçbir yerde 15 px'in altına inmez; #4A4270 krem üstünde 8,36:1, beyaz üstünde 9,11:1. */
+
+/* =================== Ana sayfa · 04 Kullanım (U4) — yalnız punto/renk/ayraç; düzen ve sıra v19 ile aynı (TASLAK ESAS) =================== */
+.v18-kul__cizgi{height:1px;background:rgba(34,26,74,.2)}
+.v18-ilac{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:0;color:var(--murekkep)}
+.v18-kul__uyari h3{font-family:var(--sans);font-size:15px;font-weight:700;line-height:1.4;letter-spacing:0;text-transform:none;margin:0 0 2px}
+.v18-uyarilar li{font-size:15px;line-height:1.6;color:#4A4270;padding:8px 0;border-bottom:1px solid rgba(34,26,74,.12)}
+@media (max-width:759px){
+  .v18-ilac{font-size:16px}
+  .v18-uyarilar li{font-size:15px}
+}
+
+/* =================== Satın al · sayfa içi çapa =================== */
+#sa-karar{scroll-margin-top:calc(var(--bant-h) + var(--gez-h) + 16px)}
+
+/* =================== Satın al · satış bölgesi (U1, A–E) =================== */
+.sa-satis{padding-top:96px}
+.sa-satis+.sa-satis{padding-top:120px}
+.sa-sss.sa-satis{padding-top:96px}
+.sa-satis__h2{font-family:var(--disp);font-weight:800;font-size:56px;line-height:1;letter-spacing:-.02em;margin:0 0 32px;color:var(--murekkep)}
+.sa-satis .hap--acik{background:var(--krem);color:var(--murekkep)}
+.sa-satis .hap--gece-acik{background:transparent;color:var(--krem);box-shadow:inset 0 0 0 1.5px rgba(255,244,223,.7)}
+.sa-ok{font-size:16px;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em}
+
+/* A · Nasıl kullanılır: tek kart, iki yarım */
+.sa-kul__kart{display:grid;grid-template-columns:1fr 1fr;border-radius:32px;overflow:hidden}
+.sa-kul__yari{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:40px 44px 48px}
+.sa-kul__yari--sabah{background:var(--safran);color:var(--murekkep)}
+.sa-kul__yari--aksam{background:var(--gece);color:var(--krem)}
+.sa-kul__doz{font-family:var(--disp);font-weight:800;font-size:28px;line-height:1.2;letter-spacing:-.01em;margin:0;max-width:26ch}
+.sa-kul__alt{margin-top:16px;max-width:760px}
+.sa-kul__saat{font-size:16px;line-height:1.55;margin:0 0 8px}
+.sa-kul__porsiyon{font-size:17px;font-weight:700;line-height:1.5;margin:0 0 10px}
+.sa-kul__not{font-size:15px;line-height:1.6;margin:0 0 2px;color:#4A4270}
+
+/* B · İçinde ne var */
+.sa-icerik__izgara{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+.sa-icerik__izgara>.sa-satis__h2{grid-column:1 / -1}
+.sa-icerik__buyuk{grid-column:1 / span 5;font-family:var(--disp);font-weight:800;font-size:48px;line-height:1.04;letter-spacing:-.02em;margin:0}
+.sa-icerik__sag{grid-column:7 / span 6}
+.sa-icerik__sag p{font-size:18px;line-height:1.55;margin:0 0 20px}
+.sa-icerik__sag p:last-child{margin:0}
+
+/* C · Dört bileşen ne yapar: 4 kart, krom safran, diğerleri gece (ana sayfa 02 renk mantığı) */
+.sa-beyan__giris{font-size:18px;line-height:1.55;max-width:64ch;margin:0 0 40px}
+.sa-kartlar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.sa-kart{display:flex;flex-direction:column;align-items:flex-start;gap:12px;border-radius:24px;padding:28px 24px 32px}
+.sa-kart--sabah{background:var(--safran);color:var(--murekkep)}
+.sa-kart--aksam{background:var(--gece);color:var(--krem)}
+.sa-kart__ad{font-family:var(--disp);font-weight:800;font-size:24px;line-height:1.05;margin:8px 0 0}
+.sa-kart__miktar{font-family:var(--disp);font-weight:800;font-size:40px;line-height:1;letter-spacing:-.02em;margin:0}
+.sa-kart__cumleler{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.sa-kart__cumleler li{font-size:16px;line-height:1.5}
+.sa-beyan__geri{margin:28px 0 0;font-size:16px;font-weight:700;line-height:1.5}
+.sa-dipnot{margin-top:16px;max-width:760px}
+.sa-dipnot p{font-size:15px;line-height:1.6;margin:0 0 4px;color:#4A4270}
+.sa-dipnot p.sa-dipnot__bag{margin-top:14px;color:var(--murekkep)}
+
+/* D · Sık sorulanlar: soru ve yanıt açık durur (taslak: akordeon değildir) */
+.sa-sss__izgara{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+.sa-sss__izgara>.sa-satis__h2{grid-column:1 / span 4;font-size:40px}
+.sa-sss__liste{grid-column:5 / span 8}
+.sa-sss__oge{padding:20px 0;border-top:1.5px solid var(--murekkep)}
+.sa-sss__oge:last-of-type{border-bottom:1.5px solid var(--murekkep)}
+.sa-sss__soru{font-family:var(--sans);font-size:19px;font-weight:700;line-height:1.35;margin:0 0 8px}
+.sa-sss__cevap{font-size:17px;line-height:1.55;margin:0}
+.sa-sss__tum{margin:24px 0 0}
+
+/* E · Kapanış bandı: gece, ikinci güneş, tek safran Satın al → #sa-karar */
+.sa-kapanis{position:relative;overflow:hidden;display:grid;place-items:center;height:280px;margin-top:64px;background:var(--gece)}
+.sa-kapanis .uo-gunes{width:340px;height:340px;right:-90px;bottom:-170px;left:auto;top:auto}
+.sa-kapanis__dugme{position:relative;z-index:1;width:320px;max-width:calc(100% - 40px);min-height:56px;border-color:var(--safran);background:var(--safran);color:var(--murekkep);font-size:17px;font-weight:800}
+.sa-kapanis__dugme:hover{border-color:var(--mandalina);background:var(--mandalina);color:var(--murekkep)}
+
+@media (max-width:1023px){
+  .sa-icerik__buyuk{grid-column:1 / -1;margin-bottom:24px}
+  .sa-icerik__sag{grid-column:1 / -1}
+  .sa-sss__izgara>.sa-satis__h2,.sa-sss__liste{grid-column:1 / -1}
+  .sa-kartlar{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:759px){
+  .sa-satis{padding-top:72px}
+  .sa-satis+.sa-satis,.sa-sss.sa-satis{padding-top:88px}
+  .sa-satis__h2,.sa-sss__izgara>.sa-satis__h2{font-size:36px;margin-bottom:24px}
+  .sa-kul__kart{grid-template-columns:1fr;border-radius:24px}
+  .sa-kul__yari{padding:28px 24px 32px;gap:16px}
+  .sa-kul__doz{font-size:22px}
+  .sa-icerik__buyuk{font-size:34px}
+  .sa-icerik__sag p{font-size:17px}
+  .sa-beyan__giris{font-size:17px;margin-bottom:28px}
+  /* yatay kaydırmalı şerit; bir sonraki kartın kenarı hep görünür */
+  .sa-kartlar{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--kap-pad));padding:0 var(--kap-pad) 8px;scroll-padding-inline:var(--kap-pad);-webkit-overflow-scrolling:touch}
+  .sa-kart{flex:0 0 280px;scroll-snap-align:start}
+  .sa-kapanis{height:240px;margin-top:56px}
+  .sa-kapanis .uo-gunes{width:200px;height:200px;right:-60px;bottom:-100px}
+}
+
+/* =================== Satın al · prosedür bölgesi (U2) =================== */
+.sa-v24 .sa-akis{padding:80px 0 40px}
+.sa-v24 .sa-akis__baslik,.sa-v24 .sa-modul h2{font-family:var(--disp);font-size:32px;line-height:1.05;letter-spacing:-.01em}
+.sa-v24 .sa-modul{padding-block:40px;border-bottom:1px solid rgba(34,26,74,.16)}
+.sa-v24 .sa-modul--son{border-bottom:0}
+
+/* =================== Satın al · yasal bölge (U3): ürün tablosu, Etiket, İlgili, Satıcı, Zorunlu =================== */
+.sa-v24 .sa-tablo{font-size:15px}
+.sa-v24 .sa-tablo th,.sa-v24 .sa-tablo td{font-size:15px;line-height:1.6;padding:9px 0;border-bottom:1px solid rgba(34,26,74,.12);color:#4A4270}
+.sa-v24 .sa-tablo th{color:var(--murekkep)}
+.sa-v24 .sa-tablo tr:first-child>*{border-top:1px solid rgba(34,26,74,.12)}
+.sa-v24 .sa-yasal .yasal__h2{font-family:var(--sans);font-size:18px;font-weight:800;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--murekkep);margin:40px 0 12px}
+.sa-v24 .sa-yasal p,.sa-v24 .sa-yasal li,.sa-v24 .sa-yasal td,.sa-v24 .sa-yasal th{font-size:15px;line-height:1.6;color:#4A4270}
+.sa-v24 .sa-yasal strong{color:var(--murekkep)}
+.sa-v24 .sa-yasal .zorunlu{font-size:15px;line-height:1.6;color:#4A4270;margin:0 0 .5em}
+.sa-v24 .sa-yasal #zorunlu-bilgiler+.zorunlu,.sa-v24 .sa-yasal #zorunlu-bilgiler+.zorunlu strong{font-size:16px;font-weight:700;color:var(--murekkep)}
+.sa-v24 .sa-yasal .tablo-sarmal{margin:8px 0 20px}
+.sa-v24 .sa-yasal .yasal-tablo{background:transparent;border-radius:0;overflow:visible}
+.sa-v24 .sa-yasal .yasal-tablo th,.sa-v24 .sa-yasal .yasal-tablo td{padding:9px 12px 9px 0;border-bottom:1px solid rgba(34,26,74,.12)}
+.sa-v24 .sa-yasal .yasal-tablo tr:last-child>*{border-bottom:1px solid rgba(34,26,74,.12)}
+.sa-v24 .sa-yasal .yasal-tablo thead th{background:transparent;color:var(--murekkep);font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;border-bottom:1.5px solid var(--murekkep)}
+.sa-v24 .sa-yasal .yasal-tablo tbody th{color:var(--murekkep)}
+.sa-v24 .sa-yasal .yasal__ayrac{border-top:1px solid rgba(34,26,74,.12);margin-top:40px}
+@media (min-width:1100px){
+  .sa-v24 .sa-yasal .kap>.yasal__h2{margin-top:40px}
+  .sa-v24 .sa-yasal .kap>.yasal__h2+*{margin-top:42px}
+  .sa-v24 .sa-yasal .kap>.yasal__h2:first-child{margin-top:0}
+  .sa-v24 .sa-yasal .kap>.yasal__h2:first-child+*{margin-top:2px}
+}
+@media (max-width:599px){
+  .sa-v24 .sa-yasal .yasal-tablo:has(thead) th,.sa-v24 .sa-yasal .yasal-tablo:has(thead) td{font-size:15px;padding:8px 8px 8px 0}
+  .sa-v24 .sa-yasal .yasal-tablo:has(thead) thead th{font-size:15px;letter-spacing:0}
+  .sa-v24 .sa-yasal .yasal-tablo tbody th{font-size:15px;letter-spacing:0}
+}
