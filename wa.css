@@ -1,12 +1,12 @@
-/* LIVEXA · sabit WhatsApp düğmesi · IE-2026-10-12-104 · bütün sayfalar (wa.css).
+/* LIVEXA · sabit WhatsApp düğmesi · IE-2026-10-12-104, renk/glif IE-2026-10-12-105 · bütün sayfalar (wa.css).
    Yalnız ikon; görünür etiket, ipucu, ön doldurulmuş mesaj yok. Erişilebilir ad satın al v15 mikro metin tablosundan.
-   Zemin mürekkep #221A4A, glif krem #FFF4DF (≈15:1); koyu yüzeylerde ayrım için 2 px krem halka.
+   IE-105: zemin WhatsApp yeşili #25D366, glif beyaz resmî WhatsApp logosu; koyu altbilgide ayrım için 2 px beyaz halka.
+   Üzerine gelince renk değişmez (efekt yok). Odak: 3 px mürekkep #221A4A çerçeve; koyu altbilgide de seçilsin diye çevresinde beyaz hale (box-shadow 8 px).
    Mobil yapışkan çubuk görünürken --wa-alt (wa.js) ile çubuğun üstüne kayar.
    Beyan bölümü, zorunlu metin ya da açık mobil menü görünürken gizlenir (.wa-dugme--gizli, wa.js / :has). */
-.wa-dugme{position:fixed;z-index:19;right:calc(16px + env(safe-area-inset-right));bottom:var(--wa-alt,calc(16px + env(safe-area-inset-bottom)));width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--murekkep,#221A4A);color:var(--krem,#FFF4DF);box-shadow:0 0 0 2px var(--krem,#FFF4DF),0 6px 18px rgba(34,26,74,.28);text-decoration:none;opacity:1;visibility:visible;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear 0s,background-color .18s ease,color .18s ease}
-.wa-dugme svg{width:28px;height:28px;display:block}
-.wa-dugme:hover{background:var(--mandalina,#FF7A45);color:var(--murekkep,#221A4A)}
-.wa-dugme:focus-visible{outline:3px solid var(--mandalina-metin,#C2440F);outline-offset:3px}
+.wa-dugme{position:fixed;z-index:19;right:calc(16px + env(safe-area-inset-right));bottom:var(--wa-alt,calc(16px + env(safe-area-inset-bottom)));width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#25D366;color:#FFFFFF;box-shadow:0 0 0 2px #FFFFFF,0 6px 18px rgba(34,26,74,.28);text-decoration:none;opacity:1;visibility:visible;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear 0s}
+.wa-dugme svg{width:30px;height:30px;display:block}
+.wa-dugme:focus-visible{outline:3px solid #221A4A;outline-offset:3px;box-shadow:0 0 0 8px #FFFFFF,0 6px 18px rgba(34,26,74,.28)}
 .wa-dugme--gizli,body:has(#menu-dugme[aria-expanded="true"]) .wa-dugme{opacity:0;visibility:hidden;pointer-events:none;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear .2s}
 @media (min-width:1024px){.wa-dugme{right:calc(28px + env(safe-area-inset-right));bottom:var(--wa-alt,calc(28px + env(safe-area-inset-bottom)))}}
 @media (prefers-reduced-motion:reduce){.wa-dugme,.wa-dugme--gizli,body:has(#menu-dugme[aria-expanded="true"]) .wa-dugme{transition:none}}
