@@ -1,0 +1,40 @@
+/* LIVEXA ana sayfa v22 · YAYIN · IE-2026-10-12-084 · yaşam bandı (bolum-yasam), K5 Y-1 yerleşimi.
+   Statik bant: üstte yuva satırı; altında iki 4:5 kare (masaüstünde yan yana eşit, mobilde alt alta), her birinin altında
+   yapay zekâ notu; en altta ayrı ürün şeridi (krem ürün kartı + Satın al). Kart iki karenin arasında değildir.
+   Zemin tek renk krem #FFF4DF; bölünme, degrade, ikinci renk yok. Hareket, sabitleme, paralaks yok. v19.css'in üstüne biner. */
+
+.v22-yasam{background:#FFF4DF;padding:clamp(72px,8.4vw,120px) 0;margin:0;position:relative}
+.v22-yasam__ic{max-width:1440px;margin:0 auto;padding-inline:var(--kap-pad);box-sizing:border-box}
+.v22-yasam__yuva{font-family:var(--sans);font-size:20px;line-height:1.4;margin:0 0 32px;color:var(--murekkep)}
+.v22-yasam__kareler{display:grid;grid-template-columns:1fr;gap:32px}
+.v22-kare{margin:0}
+.v22-kare__gorsel{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:20px;background:#FFF4DF}
+.v22-kare__gorsel picture,.v22-kare__gorsel img{display:block;width:100%;height:100%}
+.v22-kare__gorsel img{object-fit:cover;object-position:50% 50%}
+/* Yapay zekâ notu: 14 px, karenin sol kenarına hizalı, 10 px üst boşluk, mürekkep %72 (krem üstünde ≈ 5,9:1) */
+.v22-ainot{font-size:14px;line-height:1.4;color:rgba(34,26,74,.72);margin:10px 0 0}
+
+/* Ürün şeridi: karelerin altında, ayrı satır; ok, çizgi, köprü yok */
+.v22-serit{display:flex;justify-content:center;margin-top:56px}
+/* Ürün kartı (gorsel-kimlik §1.2): krem sahne, yuvarlatılmış köşe, temas gölgesi. Zemin kutu görselinin kendi fonundan
+   alt kenarından örneklendi (#EDE9D6), görselle kart arasında ek yeri görünmez. Fiyat, hap, rozet yok. */
+.v22-kart{width:min(100%,400px);border-radius:24px;overflow:hidden;background:#EDE9D6;padding-bottom:24px;
+  box-shadow:0 2px 0 rgba(34,26,74,.06),0 40px 70px -36px rgba(34,26,74,.55)}
+.v22-kart__gorsel{aspect-ratio:1200/870}
+.v22-kart__gorsel picture,.v22-kart__gorsel img{display:block;width:100%;height:100%;object-fit:cover}
+.v22-kart__dugme{display:flex;width:auto;margin:16px 24px 0}
+
+@media (min-width:1100px){
+  .v22-yasam__ic{padding-inline:64px}
+  .v22-yasam__kareler{grid-template-columns:1fr 1fr;gap:40px}
+  .v22-kare__gorsel{border-radius:24px}
+  .v22-serit{margin-top:80px}
+  .v22-kart{border-radius:32px}
+}
+
+/* Mobil yapışkan çubuk bu bantta gizli (bantta zaten düğme var) */
+.uo-cubuk.v22-gizli{transform:translateY(110%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s}
+
+/* K3 v22 B3 düzeni (gövdede kutu görseli yoksa): iki karenin altında yalnız ortalanmış birincil Satın al; kart yok */
+.v22-serit--dugme .v22-dugme{min-width:min(100%,320px)}
+@media (max-width:1099px){.v22-serit--dugme .v22-dugme{width:100%}}
