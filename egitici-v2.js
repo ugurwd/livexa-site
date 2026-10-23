@@ -97,5 +97,14 @@
   });
   iz.addEventListener('scroll', durum, { passive: true });
   window.addEventListener('resize', durum);
+  // İlk değerlendirme görseller ve yazı tipi oturmadan çalışır; şerit genişledikçe yeniden hesapla
+  window.addEventListener('load', durum);
+  [].forEach.call(iz.querySelectorAll('img'), function (i) { if (!i.complete) i.addEventListener('load', durum); });
+  if ('ResizeObserver' in window) {
+    var ro = new ResizeObserver(durum);
+    ro.observe(iz);
+    var serit = iz.querySelector('.ev2-ritim__serit');
+    if (serit) ro.observe(serit);
+  }
   durum();
 })();
