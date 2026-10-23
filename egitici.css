@@ -1,0 +1,124 @@
+/* LIVEXA · eğitici katman · ÖNİZLEME IE-2026-10-21-001
+   icerik-ve-kullanim.html (ud-*), ana sayfa #bolum-egitici (ev-egitici), SSS "Ayrıntı" satırı.
+   Metin üretmez. Uyarılar ≥15 px, kutusuz; beyan dipnotları ≥15 px, gizlenmez. */
+
+/* ---------- ortak ---------- */
+.ud{--ud-metin:17px}
+.ud-bolum{position:relative;scroll-margin-top:calc(var(--bant-h) + var(--gez-h) + 12px)}
+.ud-metin{max-width:760px}
+.ud-metin p{font-size:var(--ud-metin);line-height:1.65;margin:0 0 .9em}
+.ud-metin--genis{max-width:900px}
+.ud .d2{font-size:clamp(36px,4.4vw,60px)}
+.ud .d3{font-size:clamp(22px,2vw,28px);margin-top:1.4em}
+.ud-hap{margin:28px 0 12px}
+.ud-porsiyon{font-family:var(--disp);font-weight:800;font-size:clamp(22px,2.2vw,30px)!important;letter-spacing:-.01em;line-height:1.15!important}
+.ud-metin-bag{margin-top:1.2em}
+.ud-metin-bag a{font-weight:700;color:var(--murekkep);text-decoration:underline;text-decoration-color:var(--safran);text-decoration-thickness:3px;text-underline-offset:5px}
+.ud-metin-bag a:hover{text-decoration-color:var(--mandalina)}
+.ud picture,.ud img{display:block;max-width:100%;height:auto}
+.ud-fis{display:flex;justify-content:center}
+.ud-fis picture{display:block;max-width:100%}
+.ud-fis img{border-radius:14px;width:100%;height:auto}  /* en fazla 1:1: picture satır içi max-width = kaynak genişliği */
+.ud-fis--serit{margin:8px 0 24px}
+.ud-fis-cift{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:4px 0 20px;align-items:center}
+@media (max-width:759px){.ud-fis-cift{grid-template-columns:1fr}}
+
+/* ---------- giriş ---------- */
+.ud-giris{padding:clamp(32px,5vw,72px) 0 clamp(32px,4vw,56px)}
+.ud-giris__izgara{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center}
+.ud-h1{font-family:var(--disp);font-weight:800;font-size:clamp(48px,6.4vw,96px);line-height:.95;letter-spacing:-.03em;margin:0 0 .4em}
+.ud-sunus{font-size:clamp(18px,1.6vw,21px);line-height:1.55;margin:0 0 .8em;max-width:620px}
+.ud-giris .uo-dugme{margin-top:12px}
+.ud-giris__gorsel img{border-radius:var(--r-kart)}
+.ud-icindekiler{margin-top:clamp(32px,4vw,56px);border-top:3px solid var(--murekkep);padding-top:20px}
+.ud-icindekiler__h{font-family:var(--disp);font-size:22px;margin:0 0 12px}
+.ud-icindekiler ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:40px;counter-reset:ud}
+.ud-icindekiler li{counter-increment:ud;border-bottom:1px solid rgba(34,26,74,.18)}
+.ud-icindekiler a{display:flex;gap:14px;align-items:baseline;padding:12px 0;font-size:18px;font-weight:700;color:var(--murekkep);text-decoration:none}
+.ud-icindekiler a::before{content:counter(ud,decimal-leading-zero);font-family:var(--disp);font-weight:800;font-size:22px;color:var(--mandalina-baslik,#D9521C);min-width:34px}
+.ud-icindekiler a:hover{text-decoration:underline;text-decoration-color:var(--safran);text-decoration-thickness:3px}
+@media (max-width:759px){.ud-giris__izgara{grid-template-columns:1fr}.ud-giris__gorsel{order:-1}.ud-icindekiler ol{grid-template-columns:1fr}}
+
+/* ---------- kutunun içinde ---------- */
+.ud-iki{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.ud-foto{margin:0}
+.ud-foto img{border-radius:var(--r-kart)}
+@media (max-width:759px){.ud-iki{grid-template-columns:1fr}}
+
+/* ---------- iki formül: bölünmüş zemin ---------- */
+.ud-iki-formul{padding-bottom:var(--bolum-y)}
+.ud-bolunmus{display:grid;grid-template-columns:1fr 1fr}
+.ud-bolunmus__yari{display:flex;justify-content:center;align-items:flex-start;padding:clamp(32px,5vw,72px) clamp(16px,3vw,40px)}
+.ud-bolunmus__yari--sabah{background:var(--sahne-krem,#F1E6D4)}
+.ud-bolunmus__yari--aksam{background:var(--gece)}
+.ud-bolunmus .ud-fis{width:100%}
+.ud-iki-formul .ud-metin{padding-top:clamp(32px,4vw,56px)}
+@media (max-width:759px){.ud-bolunmus{grid-template-columns:1fr}.ud-bolunmus .ud-fis{width:100%}}
+
+/* ---------- bileşen listesi ---------- */
+.ud-liste{font-size:16px!important;line-height:1.7!important}
+
+/* ---------- dört bileşen ---------- */
+.ud-beyan{background:var(--beyaz)}
+.ud-beyan__giris{font-size:19px;margin:0 0 8px}
+.ud-kart-blok{margin:0 0 28px}
+.ud-kart{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(20px,4vw,56px);padding:clamp(22px,3vw,36px);border:3px solid var(--murekkep);border-radius:var(--r-kart);background:var(--krem);scroll-margin-top:calc(var(--bant-h) + var(--gez-h) + 12px)}
+.ud-kart__ad{font-family:var(--disp);font-weight:800;font-size:clamp(36px,3.4vw,48px);line-height:1;letter-spacing:-.02em;margin:0 0 6px}
+.ud-kart__form{font-size:13px;font-weight:800;letter-spacing:.1em;margin:0 0 16px}
+.ud-fis--kart{margin:0 0 16px;justify-content:flex-start}
+.ud-kart__mol{color:var(--murekkep)}
+.ud-kart__mol svg{display:block;max-width:140px;max-height:140px;width:auto;height:auto}
+.ud-kart__cumleler{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;align-self:center}
+.ud-kart__cumleler li{font-size:clamp(18px,1.5vw,21px);font-weight:600;line-height:1.4;padding-left:16px;border-left:4px solid var(--safran)}
+.ud-dipnot{padding:14px 4px 0}
+.ud-dipnot p{font-size:15px;line-height:1.5;margin:0 0 4px}
+.ud-ince{border:0;border-top:1px solid rgba(34,26,74,.25);margin:36px 0 20px}
+.ud-kopru{font-size:19px;margin:0}
+@media (max-width:759px){.ud-kart{grid-template-columns:1fr}}
+
+/* ---------- diğer 12 ---------- */
+.ud-duz{font-size:var(--ud-metin);font-weight:400}
+
+/* ---------- nasıl kullanılır ---------- */
+.ud-kullanim{background:var(--sahne-krem,#F1E6D4)}
+.ud-kul{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin:8px 0 32px}
+.ud-kul__kart{background:var(--krem);border-radius:var(--r-kart);padding:clamp(14px,1.6vw,20px) clamp(14px,1.6vw,20px) 24px}
+.ud-foto--kul img{border-radius:calc(var(--r-kart) - 6px)}
+.ud-doz{font-size:clamp(18px,1.5vw,21px);font-weight:600;line-height:1.45;margin:0}
+.ud-kullanim .uo-dugme{margin-top:8px}
+.ud-wa{margin:18px 0 0}
+@media (max-width:759px){.ud-kul{grid-template-columns:1fr}}
+
+/* ---------- uyarılar: kutusuz, ≥15 px ---------- */
+.ud-uyarilar .ud-metin p,.ud-uyarilar p{font-size:17px}
+.ud-tirozin{font-weight:700;font-size:clamp(19px,1.7vw,22px)!important}
+
+/* ---------- künye ---------- */
+.ud-kunye .tablo-sarmal{margin:20px 0 24px}
+.ud-kunye__tablo{width:100%;border-collapse:collapse;font-size:16px}
+.ud-kunye__tablo caption{text-align:left;font-weight:700;padding-bottom:8px;font-size:15px;opacity:.85}
+.ud-kunye__tablo th,.ud-kunye__tablo td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid rgba(255,244,223,.22);vertical-align:top}
+.ud-kunye__sahip-bas{margin-bottom:4px!important}
+
+/* ---------- sipariş ---------- */
+.ud-siparis__alt{font-size:19px;margin:0}
+
+/* ---------- mobil çubuk: beyan, uyarılar ve sipariş görünürken gizli ---------- */
+.uo-cubuk.ud-gizli{transform:translateY(110%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s}
+
+/* ---------- ana sayfa · eğitici blok (v2: solda G-3 4:5, sağda lila; aynı yükseklik) ---------- */
+.ev-egitici{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--lila)}
+.ev-egitici__foto{margin:0;line-height:0}
+.ev-egitici__foto img{display:block;width:100%;height:auto;aspect-ratio:4/5}
+.ev-egitici__blok{background:var(--lila);display:flex;align-items:center;padding:clamp(40px,5vw,88px) var(--kap-pad)}
+.ev-egitici__ic{max-width:620px}
+.ev-egitici__h2{max-width:12em}
+.ev-egitici__satir{font-size:clamp(18px,1.6vw,21px);line-height:1.5;margin:0 0 .5em}
+.ev-egitici__dugme{display:inline-flex;align-items:center;min-height:56px;margin-top:20px;padding:0 30px;border-radius:999px;background:var(--murekkep);color:var(--krem);font-weight:800;font-size:17px;text-decoration:none;border:3px solid var(--murekkep);transition:transform .2s ease}
+.ev-egitici__dugme:hover{transform:translateY(-2px)}
+.ev-egitici__dugme:focus-visible{outline:3px solid var(--safran);outline-offset:3px}
+@media (max-width:759px){.ev-egitici{grid-template-columns:1fr}.ev-egitici__blok{padding:40px var(--kap-pad) 48px}}
+
+/* ---------- SSS · Ayrıntı satırı ---------- */
+.sss-ayrinti{font-size:15px;margin:.6em 0 0}
+.sss-ayrinti a{font-weight:700}
