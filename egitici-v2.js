@@ -1,9 +1,10 @@
-/* LIVEXA · ikinci dalga · ÖNİZLEME IE-2026-10-23-004 (düzeltme turu)
+/* LIVEXA · ikinci dalga · ÖNİZLEME IE-2026-10-23-014 (K2 v3; önceki IE-2026-10-23-004)
    1) M5 etiket okuyucu (#ud-okuyucu): JS yokken düz liste (ol) olduğu gibi okunur.
       JS varsa: düğme dizisi görünür (aria-expanded + aria-controls, açıklama deseni); her zaman bir okuma açıktır,
       kapatma yoktur. ←/→/↑/↓, Home/End düğmeler arasında odağı taşır. Etiket görselindeki bölgeler (aria-hidden)
-      fare içindir, aynı düğmeyi tetikler; 768 px altında yalnız göstergedir. Liste yüksekliği en uzun okumaya sabitlenir.
-   2) M2 (#bolum-ritim): önceki/sonraki düğmeleri izi bir kare + 24 px kaydırır (yalnız işaretçi yardımı).
+      fare içindir, aynı düğmeyi tetikler; 768 px altında yalnız göstergedir. Liste yüksekliği iki sütunda en uzun okumaya, en fazla görselin yanına sığan kadar sabitlenir; tek sütunda kilit yoktur.
+   2) M2 (#bolum-ritim): önceki/sonraki düğmeleri ('Önceki kare' · 'Sonraki kare') izi bir kare + 24 px kaydırır.
+      JS yokken düğme grubu gizlidir (hidden). Klavyeyle erişilir; uçta disabled yerine aria-disabled (odak kaybolmaz).
    Metin üretmez, metin değiştirmez. */
 (function () {
   'use strict';
@@ -64,6 +65,13 @@
       en = Math.max(en, liste.offsetHeight);
     });
     ogeler.forEach(function (p, m) { p.hidden = m !== acik; });
+    // iki sütunda kilit görsel yüksekliğini aşmaz: kısa okumalarda görselin altında ölü boşluk kalmaz
+    var sahne = kok.querySelector('.ud2-ok__sahne');
+    if (sahne && window.matchMedia('(min-width:1100px)').matches) {
+      en = Math.min(en, Math.max(0, sahne.getBoundingClientRect().bottom - liste.getBoundingClientRect().top));
+    } else {
+      en = 0; // tek sütunda liste görselin altında; kilit yalnız boşluk bırakır
+    }
     liste.style.minHeight = en + 'px';
   }
   function yenidenOlc() { clearTimeout(bekle); bekle = setTimeout(olc, 120); }
@@ -79,6 +87,8 @@
   if (!iz) return;
   var az = window.matchMedia('(prefers-reduced-motion: reduce)');
   var oklar = [].slice.call(document.querySelectorAll('.ev2-ritim__ok'));
+  var okGrubu = document.querySelector('.ev2-ritim__oklar');
+  if (okGrubu) okGrubu.hidden = false;
   function adim() {
     var k = iz.querySelector('.ev2-ritim__kare');
     return (k ? k.getBoundingClientRect().width : 448) + 24;
@@ -87,11 +97,12 @@
     var son = iz.scrollWidth - iz.clientWidth - 2;
     oklar.forEach(function (o) {
       var y = Number(o.getAttribute('data-yon'));
-      o.disabled = y < 0 ? iz.scrollLeft <= 2 : iz.scrollLeft >= son;
+      o.setAttribute('aria-disabled', (y < 0 ? iz.scrollLeft <= 2 : iz.scrollLeft >= son) ? 'true' : 'false');
     });
   }
   oklar.forEach(function (o) {
     o.addEventListener('click', function () {
+      if (o.getAttribute('aria-disabled') === 'true') return;
       iz.scrollBy({ left: Number(o.getAttribute('data-yon')) * adim(), behavior: az.matches ? 'auto' : 'smooth' });
     });
   });
