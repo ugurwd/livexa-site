@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="wa.css">
 <link rel="stylesheet" href="v24.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFB930'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF7A45'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="huni.css">
 </head>
 <body data-odeme="kapali">
 <a class="atla" href="#ana">İçeriğe atla</a>
@@ -37,10 +38,11 @@
     <a class="gezinme__marka" href="index.html"><span class="gezinme__logo">LIVE<span class="x">X</span>A</span> <span class="gezinme__alt">STARS FARMA</span></a>
     <button type="button" class="menu-dugme" id="menu-dugme" aria-expanded="false" aria-controls="gezinme-listesi"><span data-mikro="menu-ac">Menü</span><span data-mikro="menu-kapat" hidden>Kapat</span></button>
     <div class="gezinme__linkler" id="gezinme-listesi">
-      <a href="index.html#bolum-04-kullanim">Nasıl kullanılır</a>
-      <a href="icerik-ve-kullanim.html#bolum-03-seffaflik">İçinde ne var</a>
-      <a href="index.html#bolum-02-beyan">Dört bileşen ne yapar</a>
+      <a href="icerik-ve-kullanim.html">Ürün</a>
+      <a href="icerik-ve-kullanim.html#ud-kullanim">Nasıl kullanılır</a>
+      <a href="icerik-ve-kullanim.html#ud-beyan">Bileşenler</a>
       <a href="sss.html">Sık sorulanlar</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
       <a href="satin-al.html" class="gezinme__al" aria-current="page">Satın al</a>
     </div>
   </div>
@@ -100,15 +102,35 @@
         <li><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dn-guven__ikon" aria-hidden="true" focusable="false"><path d="M2.5 20.5h19M4.5 20.5V4.5h15v16M4.5 9h15M10 20.5V15h4v5.5"/></svg><b>Satıcı</b><span>Bu sitede satıcı Stars Farma'dır.</span></li>
       </ul>
       <p class="zorunlu uo-al__zorunlu">Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz.</p>
+      <p class="hn-al-baglanti"><a href="kunye.html#sa-etiket">Etiket bilgileri</a><a href="kunye.html#satici">Satıcı bilgileri</a><a href="kunye.html#zorunlu-bilgiler">Zorunlu bilgiler</a></p>
     </div>
   </div>
+
+<section class="hn-bolum hn-kutu-bolum" id="sa-icerik" aria-labelledby="sa-icerik-h">
+  <div class="kap hn-kutu">
+    <figure class="hn-kutu__gorsel"><picture><source type="image/avif" srcset="gorsel/hn-kutu-ici-640.avif 640w, gorsel/hn-kutu-ici-1280.avif 1280w" sizes="(max-width:760px) calc(100vw - 40px), 560px"><source type="image/webp" srcset="gorsel/hn-kutu-ici-640.webp 640w, gorsel/hn-kutu-ici-1280.webp 1280w" sizes="(max-width:760px) calc(100vw - 40px), 560px"><img src="gorsel/hn-kutu-ici-1280.webp" width="1280" height="1600" alt="LIVEXA SABAH SAŞE poşetleri ve AKŞAM TABLET blisteri" loading="lazy" decoding="async"></picture></figure>
+    <div class="hn-kutu__metin">
+      <p class="hn-ust">Kutunun içinde</p>
+      <h2 class="hn-h2" id="sa-icerik-h">Bir kutu, iki formül</h2>
+      <ul class="hn-sayilar" aria-label="Kutunun içeriği">
+        <li><b>30</b><span>SABAH SAŞE</span></li>
+        <li><b>30</b><span>AKŞAM TABLET</span></li>
+        <li><b>1+1</b><span>Günlük porsiyon: 1 saşe + 1 tablet</span></li>
+      </ul>
+      <p>Sabah bölümü suya karıştırılan bir saşe, akşam bölümü bir tablettir. İkisi aynı kutuda gelir, ayrı ayrı satılmaz.</p>
+      <p>Sabah saşesinde yedi, akşam tabletinde dokuz bileşen miktarıyla birlikte etikette yazılıdır. Gizlenen bileşen ya da açıklanmayan miktar yoktur.</p>
+      <p><a class="sa-ok" href="icerik-ve-kullanim.html#bolum-03-seffaflik">Formülün tamamı, dozuyla →</a></p>
+      <p class="hn-kutu__not">Görsel, ambalajın 3B modelidir.</p>
+    </div>
+  </div>
+</section>
 
 <section class="sa-satis sa-kul" id="sa-kullanim" aria-labelledby="sa-kullanim-h">
   <div class="kap">
     <h2 class="sa-satis__h2" id="sa-kullanim-h">Nasıl kullanılır</h2>
     <div class="sa-kul__kart">
-      <div class="sa-kul__yari sa-kul__yari--sabah"><span class="hap hap--acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>SABAH SAŞE</span><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 saşenin 1 bardak suya (200ml) karıştırılmasıyla kullanılması önerilir."</p></div>
-      <div class="sa-kul__yari sa-kul__yari--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 kere 1 tablet kullanılması önerilir."</p></div>
+      <div class="sa-kul__yari sa-kul__yari--sabah"><span class="hap hap--acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>SABAH SAŞE</span><figure class="hn-kul-gorsel"><picture><source type="image/avif" srcset="gorsel/ev-ikilik-sabah-200ml-kompozit-540.avif 540w, gorsel/ev-ikilik-sabah-200ml-kompozit-1080.avif 1080w" sizes="(max-width:760px) calc(100vw - 80px), 560px"><source type="image/webp" srcset="gorsel/ev-ikilik-sabah-200ml-kompozit-540.webp 540w, gorsel/ev-ikilik-sabah-200ml-kompozit-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 80px), 560px"><img src="gorsel/ev-ikilik-sabah-200ml-kompozit-1080.webp" width="1080" height="864" alt="" loading="lazy" decoding="async"></picture></figure><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 saşenin 1 bardak suya (200ml) karıştırılmasıyla kullanılması önerilir."</p></div>
+      <div class="sa-kul__yari sa-kul__yari--aksam"><span class="hap hap--gece-acik"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>AKŞAM TABLET</span><figure class="hn-kul-gorsel"><picture><source type="image/avif" srcset="gorsel/ev-ikilik-aksam-isik-kompozit-540.avif 540w, gorsel/ev-ikilik-aksam-isik-kompozit-1080.avif 1080w" sizes="(max-width:760px) calc(100vw - 80px), 560px"><source type="image/webp" srcset="gorsel/ev-ikilik-aksam-isik-kompozit-540.webp 540w, gorsel/ev-ikilik-aksam-isik-kompozit-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 80px), 560px"><img src="gorsel/ev-ikilik-aksam-isik-kompozit-1080.webp" width="1080" height="864" alt="" loading="lazy" decoding="async"></picture></figure><p class="sa-kul__doz">"Takviye edici gıda olarak günde 1 kere 1 tablet kullanılması önerilir."</p></div>
     </div>
     <div class="sa-kul__alt">
       <p class="sa-kul__saat">Günün hangi saatinde ya da hangi öğünde kullanılacağına dair bir talimat ambalajda yer almaz.</p>
@@ -116,17 +138,6 @@
       <p class="sa-kul__not">Tavsiye edilen günlük porsiyonu aşmayın.</p>
       <p class="sa-kul__not">11 yaş ve üzeri kullanım için uygundur.</p>
       <p class="sa-kul__not">Tirozin metabolizma bozukluğu olan kişiler tarafından kullanılmamalıdır.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sa-satis sa-icerik" id="sa-icerik" aria-labelledby="sa-icerik-h">
-  <div class="kap sa-icerik__izgara">
-    <h2 class="sa-satis__h2" id="sa-icerik-h">İçinde ne var</h2>
-    <p class="sa-icerik__buyuk">Kutuda 30 saşe ve 30 tablet bulunur.</p>
-    <div class="sa-icerik__sag">
-      <p>Sabah saşesinde yedi, akşam tabletinde dokuz bileşen miktarıyla birlikte etikette yazılıdır. Gizlenen bileşen ya da açıklanmayan miktar yoktur.</p>
-      <p><a class="sa-ok" href="icerik-ve-kullanim.html#bolum-03-seffaflik">Formülün tamamı, dozuyla →</a></p>
     </div>
   </div>
 </section>
@@ -151,25 +162,55 @@
   </div>
 </section>
 
-<section class="sa-satis sa-sss" id="sa-sss" aria-labelledby="sa-sss-h">
-  <div class="kap sa-sss__izgara">
-    <h2 class="sa-satis__h2" id="sa-sss-h">Sık sorulanlar</h2>
-    <div class="sa-sss__liste">
-      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Saşe ve tabletin ikisi de aynı gün mü kullanılır?</h3><p class="sa-sss__cevap">Etiket iki ayrı günlük miktar verir: günde 1 saşe ve günde 1 tablet. İkisi bir günlük kullanımı birlikte oluşturur.</p></div>
-      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Günde birden fazla saşe veya tablet alınabilir mi?</h3><p class="sa-sss__cevap">Hayır. Etiket günde 1 saşe ve günde 1 tablet verir. Tavsiye edilen günlük porsiyonu aşmayın.</p></div>
-      <div class="sa-sss__oge"><h3 class="sa-sss__soru">LIVEXA ilaç mı?</h3><p class="sa-sss__cevap">Hayır. Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz. Takviye edici gıdalar normal beslenme yerine geçemez. Hastalık veya ilaç kullanılması durumunda doktorunuza danışın.</p></div>
-      <div class="sa-sss__oge"><h3 class="sa-sss__soru">2'li paket nasıl gönderilir?</h3><p class="sa-sss__cevap">2'li paket tek koli ile gönderilir.</p></div>
-      <p class="sa-sss__tum"><a class="sa-ok" href="sss.html">Bütün sorular →</a></p>
+<section class="hn-bolum" id="sa-paket" aria-labelledby="sa-paket-h">
+  <div class="kap">
+    <p class="hn-ust">Paket seçimi</p>
+    <h2 class="hn-h2" id="sa-paket-h">Size uygun paketi seçin</h2>
+    <div class="hn-paketler">
+      <article class="hn-paket" aria-labelledby="hn-p1">
+        <figure class="hn-paket__gorsel"><picture><source type="image/avif" srcset="gorsel/paket-1-kutu-400.avif 400w, gorsel/paket-1-kutu-800.avif 800w, gorsel/paket-1-kutu-1200.avif 1200w" sizes="(max-width:760px) 80vw, 320px"><source type="image/webp" srcset="gorsel/paket-1-kutu-400.webp 400w, gorsel/paket-1-kutu-800.webp 800w, gorsel/paket-1-kutu-1200.webp 1200w" sizes="(max-width:760px) 80vw, 320px"><img src="gorsel/paket-1-kutu-1200.webp" width="1200" height="900" alt="LIVEXA kutusu, ön yüz" loading="lazy" decoding="async"></picture></figure>
+        <h3 class="hn-paket__ad" id="hn-p1">1 kutu</h3>
+        <p class="hn-paket__tutar">2.900 TL</p>
+        <p class="hn-paket__not">(KDV ve kargo dahil)</p>
+        <ul class="hn-paket__liste">
+          <li>30 saşe ve 30 tablet</li>
+          <li>Günlük porsiyonla 30 gün</li>
+          <li>Kargo ücreti satıcıya aittir, sizden alınmaz</li>
+        </ul>
+        <a class="dugme uo-dugme" href="#sa-karar" data-hn-paket="1">1 kutu seç</a>
+      </article>
+      <article class="hn-paket hn-paket--one" aria-labelledby="hn-p2">
+        <span class="hn-paket__rozet">Kutu başına 2.750 TL</span>
+        <figure class="hn-paket__gorsel"><picture><source type="image/avif" srcset="gorsel/paket-2-kutu-400.avif 400w, gorsel/paket-2-kutu-800.avif 800w, gorsel/paket-2-kutu-1200.avif 1200w" sizes="(max-width:760px) 80vw, 320px"><source type="image/webp" srcset="gorsel/paket-2-kutu-400.webp 400w, gorsel/paket-2-kutu-800.webp 800w, gorsel/paket-2-kutu-1200.webp 1200w" sizes="(max-width:760px) 80vw, 320px"><img src="gorsel/paket-2-kutu-1200.webp" width="1200" height="900" alt="Yan yana iki LIVEXA kutusu" loading="lazy" decoding="async"></picture></figure>
+        <h3 class="hn-paket__ad" id="hn-p2">2'li paket (2 kutu)</h3>
+        <p class="hn-paket__tutar">5.500 TL</p>
+        <p class="hn-paket__not">(KDV ve kargo dahil)</p>
+        <ul class="hn-paket__liste">
+          <li>60 saşe ve 60 tablet</li>
+          <li>Günlük porsiyonla 60 gün</li>
+          <li>2'li paket tek koli ile gönderilir.</li>
+        </ul>
+        <a class="dugme uo-dugme" href="#sa-karar" data-hn-paket="2">2'li paketi seç</a>
+      </article>
     </div>
+    <p class="hn-paket__alt">Ambalajı açılmış ürün, sağlık ve hijyen nedeniyle iade alınmaz; 2'li pakette bu kural her kutu için ayrı uygulanır.</p>
   </div>
 </section>
 
-<div class="sa-kapanis">
-  <div class="uo-gunes" aria-hidden="true"></div>
-  <a class="dugme sa-kapanis__dugme" href="#sa-karar">Satın al</a>
-</div>
-
+<section class="hn-bolum" id="sa-guvence" aria-labelledby="sa-guvence-h">
   <div class="kap">
+    <p class="hn-ust">Güvenle sipariş</p>
+    <h2 class="hn-h2" id="sa-guvence-h">Ürün sahibinden, doğrudan</h2>
+    <ul class="hn-neden">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 20.5h19M4.5 20.5V4.5h15v16M4.5 9h15M10 20.5V15h4v5.5"/></svg><b>Satıcı Stars Farma</b><p>Bu sitede satıcı Stars Farma'dır. Fatura, teslimat ve iade Stars Farma tarafından yürütülür. Fatura e-Arşiv fatura olarak düzenlenir.</p></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5h9l3.5 3.5v13.5H6z"/><path d="M14.5 3.5V7.5h4M9 12h6M9 15.5h6"/></svg><b>Etiketin tamamı açık</b><p>Gizlenen bileşen ya da açıklanmayan miktar yoktur. <a href="kunye.html#sa-etiket">Etiket bilgileri</a></p></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg><b>Güvenli ödeme</b><p>Ödeme altyapısı açıldığında ödemeler PayTR güvenli ödeme sayfası üzerinden alınacaktır. Kart bilgileriniz bu sitede alınmaz, işlenmez ve saklanmaz.</p></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>Sağlık bilgisi istenmez</b><p>Sipariş için sağlık bilginiz istenmez.</p></li>
+    </ul>
+  </div>
+</section>
+
+<div class="kap">
     <section class="sa-akis" aria-labelledby="sa-akis-baslik">
       <h2 class="sa-akis__baslik" id="sa-akis-baslik">Siparişten sonra</h2>
       <ol class="sa-akis__adimlar" aria-label="Siparişten sonraki adımlar">
@@ -181,7 +222,7 @@
     </section>
   </div>
 
-  <div class="kap">
+<div class="kap">
     <section class="sa-modul" aria-labelledby="sa-siparis">
       <div class="sa-modul__sol">
         <h2 id="sa-siparis">Nasıl sipariş verilir</h2>
@@ -190,15 +231,8 @@
       <div class="sa-modul__sag">
         <ol class="adimlar">
           <li>1 kutu ya da 2'li paket seçin ve <a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a> ile <a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a>'ni okuyun.</li>
-          <li>Aşağıdaki kutuyu işaretleyin. Kutu önceden işaretli gelmez; işaretlenmeden ödeme adımına geçilemez.
-            <label class="onay"><input type="checkbox" disabled> <span><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formunu</a> okudum, <a href="mesafeli-satis-sozlesmesi.html">mesafeli satış sözleşmesini</a> onaylıyorum.</span></label>
-          </li>
-          <li>Ödeme sayfasına geçin ve ödemeyi tamamlayın.
-            <div class="odeme-satir">
-              <a class="dugme dugme--pasif dugme--kapali" role="link" aria-disabled="true" aria-describedby="odeme-not">Ödeme sayfasına geç</a>
-              <p class="odeme-not" id="odeme-not"><span class="pip" aria-hidden="true"></span>Ödeme altyapısı yakında açılacaktır.</p>
-            </div>
-          </li>
+          <li>Satın al kutusundaki onay kutusunu işaretleyin. Kutu önceden işaretli gelmez; işaretlenmeden ödeme adımına geçilemez.</li>
+          <li>Ödeme sayfasına geçin ve ödemeyi tamamlayın. <a class="sa-ok" href="#sa-karar">Paket seçimine dön ↑</a></li>
         </ol>
         <ul class="odeme-bilgi">
           <li>Ödeme altyapısı açıldığında ödemeler PayTR güvenli ödeme sayfası üzerinden alınacaktır.</li>
@@ -215,54 +249,35 @@
         <p>Teslim aldığınız günden itibaren 14 gün içinde cayma hakkınız vardır. Ambalajı açılmış ürün, sağlık ve hijyen nedeniyle iade alınmaz; 2'li pakette bu kural her kutu için ayrı uygulanır. Hakkın nasıl kullanılacağı ve istisnanın kapsamı <a href="iade-ve-cayma.html">İade ve cayma</a> sayfasında yazar.</p>
       </div>
     </section>
-
-    <section class="sa-modul sa-modul--son">
-      <div class="sa-modul__sol" aria-hidden="true"></div>
-      <div class="sa-modul__sag">
-        <table class="sa-tablo"><tbody>
-          <tr><th scope="row">Ürün</th><td>LIVEXA, takviye edici gıda</td></tr>
-          <tr><th scope="row">Kutu içeriği</th><td>30 saşe ve 30 tablet</td></tr>
-          <tr><th scope="row">Net miktar</th><td>30 saşe / 30 tablet</td></tr>
-          <tr><th scope="row">T.E.G. Onay No</th><td>027086-31.07.2026 (saşe) · 027087-31.07.2026 (tablet)</td></tr>
-          <tr><th scope="row">İşletme Kayıt No</th><td>TR-06-K-074972</td></tr>
-          <tr><th scope="row">Kullanıcı grubu</th><td>11 yaş ve üzeri</td></tr>
-        </tbody></table>
-      </div>
-    </section>
   </div>
 
-  <div class="yasal sa-yasal">
-    <div class="kap">
-<h2 class="d3 yasal__h2" id="sa-etiket">Etiket bilgileri</h2>
-<p><strong>SABAH SAŞE — 1 saşe</strong></p>
-<div class="tablo-sarmal"><table class="yasal-tablo"><thead><tr><th scope="col">Etken Madde</th><th scope="col">1 Saşe</th><th scope="col">%BRD</th></tr></thead><tbody><tr><td>L-Karnitin</td><td>1000 mg</td><td>**</td></tr><tr><td>Konjak Glukomannan</td><td>1000 mg</td><td>**</td></tr><tr><td>Karamuk Ekstresi</td><td>200 mg</td><td>**</td></tr><tr><td>Yeşil Çay Ekstresi</td><td>200 mg</td><td>**</td></tr><tr><td>Taurin</td><td>200 mg</td><td>**</td></tr><tr><td>L-Tirozin</td><td>100 mg</td><td>**</td></tr><tr><td>Krom</td><td>200 mcg</td><td>%500</td></tr></tbody></table></div>
-<p>Bileşenler: L-Karnitin L-Tartarat, Konjak glukomannan, Maltodekstrin, Taurin, Karamuk Ekstresi, Yeşil Çay Ekstresi, Portakal Aroma Vericisi, L-tirozin, Steviadan elde edilen steviol glikozitler (E 960a), Asitlik Düzenleyici; Sitrik asit (E 330), Topaklanmayı Önleyici; Silikon dioksit (E 551), Krom Pikolinat.</p>
-<p>T.E.G. Onay No: 027086-31.07.2026</p>
-<p><strong>AKŞAM TABLET — 1 tablet</strong></p>
-<div class="tablo-sarmal"><table class="yasal-tablo"><thead><tr><th scope="col">Etken Madde</th><th scope="col">1 Tablet</th><th scope="col">%BRD</th></tr></thead><tbody><tr><td>L-Sistein</td><td>150 mg</td><td>**</td></tr><tr><td>Kolin</td><td>150 mg</td><td>**</td></tr><tr><td>Devedikeni Ekstresi</td><td>150 mg</td><td>**</td></tr><tr><td>Enginar Ekstresi</td><td>150 mg</td><td>**</td></tr><tr><td>Karahindiba Ekstresi</td><td>100 mg</td><td>**</td></tr><tr><td>Alfa Lipoik Asit</td><td>100 mg</td><td>**</td></tr><tr><td>L-metiyonin</td><td>100 mg</td><td>**</td></tr><tr><td>Vitamin B6</td><td>1,4 mg</td><td>%100</td></tr><tr><td>Selenyum</td><td>55 mcg</td><td>%100</td></tr></tbody></table></div>
-<p>Bileşenler: Kolin Bitartarat, Hacim Arttırıcı; Mikrokristalin selüloz (E 460(i)), L-Sistein Hidroklorür Monohidrat, Devedikeni Ekstresi, Enginar Ekstresi, Karahindiba Ekstresi, Alfa Lipoik asit, L-Metiyonin, Stabilizör; Polivinil pirolidon (E 1201), Topaklanmayı Önleyici; Yağ asitlerinin magnezyum tuzları (E 470b), Topaklanmayı Önleyici; Silikon dioksit (E 551), Piridoksin Hidroklorür, Sodyum Selenit.</p>
-<p>T.E.G. Onay No: 027087-31.07.2026</p>
-<p>BRD: *Beslenme Referans Değeri **Beslenme Referans Değeri Yoktur.</p>
-<h2 class="d3 yasal__h2">İlgili sayfalar</h2>
-<ul class="yasal__liste"><li><a href="teslimat-ve-kargo.html">Teslimat ve kargo</a></li><li><a href="iade-ve-cayma.html">İade ve cayma</a></li><li><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formu</a></li><li><a href="mesafeli-satis-sozlesmesi.html">Mesafeli satış sözleşmesi</a></li><li><a href="kvkk-aydinlatma.html">KVKK aydınlatma metni</a></li><li><a href="gizlilik-ve-cerez.html">Gizlilik ve çerez politikası</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="iletisim.html">İletişim</a></li></ul>
-<h2 class="d3 yasal__h2">Satıcı bilgileri</h2>
-<p>Bu sitede satıcı Stars Farma'dır. Fatura, teslimat ve iade Stars Farma tarafından yürütülür. Fatura e-Arşiv fatura olarak düzenlenir.</p>
-<div class="tablo-sarmal"><table class="yasal-tablo"><tbody><tr><th scope="row">Unvan</th><td>STARS FARMA İLAÇ MEDİKAL TİCARET PAZARLAMA LİMİTED ŞİRKETİ</td></tr><tr><th scope="row">MERSİS No</th><td>0781108979900001</td></tr><tr><th scope="row">Vergi dairesi ve no</th><td>Yatağan Vergi Dairesi · 7811089799</td></tr><tr><th scope="row">Merkez adresi</th><td>Konak Mah. 157 Sk. No: 8 İç Kapı No: 3 Yatağan / Muğla</td></tr><tr><th scope="row">Telefon</th><td>0530 967 02 16</td></tr><tr><th scope="row">E-posta</th><td>siparis@livexa.com.tr · info@livexa.com.tr</td></tr><tr><th scope="row">Fatura</th><td>fatura@livexa.com.tr</td></tr><tr><th scope="row">İşletme Kayıt No</th><td>TR-06-K-074972</td></tr><tr><th scope="row">Marka</th><td>LIVEXA</td></tr></tbody></table></div>
-<hr class="yasal__ayrac">
-<h2 class="d3 yasal__h2" id="zorunlu-bilgiler">Zorunlu bilgiler</h2>
-<p class="zorunlu"><strong>Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz.</strong></p>
-<p class="zorunlu">Takviye edici gıdalar normal beslenme yerine geçemez. Dengeli ve çeşitli beslenme ile sağlıklı bir yaşam tarzı önemlidir.</p>
-<p class="zorunlu">Tavsiye Edilen Günlük Alım Dozu: Takviye edici gıda olarak günde 1 kere 1 tablet kullanılması önerilir.</p>
-<p class="zorunlu">Tavsiye Edilen Günlük Alım Dozu: Takviye edici gıda olarak günde 1 saşenin 1 bardak suya (200ml) karıştırılmasıyla kullanılması önerilir.</p>
-<p class="zorunlu">Tavsiye edilen günlük porsiyonu aşmayın.</p>
-<p class="zorunlu">Kullanıcı Grubu: 11 yaş ve üzeri kullanım için uygundur.</p>
-<p class="zorunlu">Uyarılar: Çocukların ulaşamayacağı yerde saklayın. Hamilelik ve emzirme dönemi ile hastalık veya ilaç kullanılması durumlarında doktorunuza danışın. <strong>Tirozin metabolizma bozukluğu olan kişiler tarafından kullanılmamalıdır.</strong></p>
-<p class="zorunlu">Saklama Koşulları: 25 C altında kuru ve serin yerde muhafaza ediniz.</p>
-<p class="zorunlu">Ürün Sahibi: Stars Farma İlaç Medikal Ticaret Pazarlama Limited Şirketi Konak Mah. 157.Sok. No:8/3 Yatağan/Muğla</p>
-<p class="zorunlu">İşletme Kayıt No: TR-06-K-074972</p>
-<p class="zorunlu">Menşe Ülke: Türkiye (Takviye edici gıdanın ana bileşeninin menşei, ürünün menşe ülkesinden farklıdır.)</p>
+<section class="sa-satis sa-sss" id="sa-sss" aria-labelledby="sa-sss-h">
+  <div class="kap sa-sss__izgara">
+    <h2 class="sa-satis__h2" id="sa-sss-h">Sık sorulanlar</h2>
+    <div class="sa-sss__liste">
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Saşe ve tabletin ikisi de aynı gün mü kullanılır?</h3><p class="sa-sss__cevap">Etiket iki ayrı günlük miktar verir: günde 1 saşe ve günde 1 tablet. İkisi bir günlük kullanımı birlikte oluşturur.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Günde birden fazla saşe veya tablet alınabilir mi?</h3><p class="sa-sss__cevap">Hayır. Etiket günde 1 saşe ve günde 1 tablet verir. Tavsiye edilen günlük porsiyonu aşmayın.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">LIVEXA ilaç mı?</h3><p class="sa-sss__cevap">Hayır. Takviye edici gıdadır. İlaç değildir. Hastalıkların önlenmesi veya tedavi edilmesi amacıyla kullanılmaz. Takviye edici gıdalar normal beslenme yerine geçemez. Hastalık veya ilaç kullanılması durumunda doktorunuza danışın.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">2'li paket nasıl gönderilir?</h3><p class="sa-sss__cevap">2'li paket tek koli ile gönderilir.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Kargo ücreti var mı?</h3><p class="sa-sss__cevap">Kargo ücreti satıcıya aittir, sizden alınmaz.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">Fatura nasıl gelir?</h3><p class="sa-sss__cevap">Faturanız Stars Farma tarafından e-Arşiv fatura olarak düzenlenir ve size e-postayla iletilir. Faturayla ilgili talepleriniz için <a href="mailto:fatura@livexa.com.tr">fatura@livexa.com.tr</a> adresine yazabilirsiniz.</p></div>
+      <div class="sa-sss__oge"><h3 class="sa-sss__soru">İade ve cayma nasıl olur?</h3><p class="sa-sss__cevap">Teslim aldığınız günden itibaren 14 gün içinde cayma hakkınız vardır. Ambalajı açılmış ürün, sağlık ve hijyen nedeniyle iade alınmaz; 2'li pakette bu kural her kutu için ayrı uygulanır. 2'li paketin yalnız bir kutusunu iade ederseniz yalnız açılmamış kutu iade edilebilir ve iade edilen her kutu için 2.750 TL iade edilir. İade kargo ücreti Stars Farma'ya aittir. Ambalajın açılmış olması, ayıplı ürüne ilişkin hakları ortadan kaldırmaz.</p><p class="sa-sss__cevap">Cayma bildiriminizi <a href="mailto:siparis@livexa.com.tr">siparis@livexa.com.tr</a> adresine e-postayla iletebilirsiniz. Hakkın nasıl kullanılacağı ve istisnanın kapsamı <a href="iade-ve-cayma.html">İade ve cayma</a> sayfasında yazar.</p></div>
+      <p class="sa-sss__tum"><a class="sa-ok" href="sss.html">Bütün sorular →</a></p>
     </div>
   </div>
+</section>
+
+<section class="hn-kapanis" aria-labelledby="sa-kapanis-h">
+  <div class="uo-gunes" aria-hidden="true"></div>
+  <div class="kap hn-kapanis__ic">
+    <h2 class="hn-kapanis__h" id="sa-kapanis-h">Sabah saşe, akşam tablet. Tek kutuda.</h2>
+    <div>
+      <p class="hn-kapanis__fiyat">Fiyat — 1 kutu <b>2.900 TL</b><br>Fiyat — 2'li paket (2 kutu) <b>5.500 TL</b><br>(KDV ve kargo dahil)</p>
+      <a class="dugme uo-dugme" href="#sa-karar">Paketinizi seçin</a>
+      <p class="hn-kapanis__durum">Ödeme altyapısı yakında açılacaktır.</p>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -285,19 +300,7 @@
   <div class="kap">
     <div class="altbilgi__ust">
       <a class="altbilgi__marka" href="index.html"><span class="gezinme__logo">LIVE<span class="x">X</span>A</span></a>
-      <div class="baglantilar">
-        <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a>
-        <a href="gizlilik-ve-cerez.html">Gizlilik Politikası</a>
-        <a href="gizlilik-ve-cerez.html">Çerez Tercihleri</a>
-        <a href="iletisim.html">İletişim</a>
-        <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="index.html#bolum-05-kunye">Künye</a>
-        <a href="satin-al.html">Satın al</a>
-        <a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a>
-        <a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a>
-        <a href="iade-ve-cayma.html">İade ve Cayma</a>
-        <a href="teslimat-ve-kargo.html">Teslimat ve Kargo</a>
-      </div>
+      <nav class="baglantilar hn-baglantilar" aria-label="Site bağlantıları"><div class="v18-grup"><p class="v18-grup__bas">Ürün</p><a href="icerik-ve-kullanim.html">İçerik ve Kullanım</a><a href="sss.html">Sık Sorulanlar</a><a href="satin-al.html">Satın al</a></div><div class="v18-grup"><p class="v18-grup__bas">Alışveriş</p><a href="teslimat-ve-kargo.html">Teslimat ve Kargo</a><a href="iade-ve-cayma.html">İade ve Cayma</a><a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a><a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a></div><div class="v18-grup"><p class="v18-grup__bas">Kurumsal</p><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a><a href="kunye.html">Künye ve Satıcı Bilgileri</a></div><div class="v18-grup"><p class="v18-grup__bas">Kişisel veriler</p><a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a><a href="gizlilik-ve-cerez.html">Gizlilik Politikası</a><a href="gizlilik-ve-cerez.html">Çerez Tercihleri</a></div></nav>
       <div class="sos-grup sos-grup--alt" role="group" aria-labelledby="sos-grup-bas"><p class="sos-grup__bas" id="sos-grup-bas">Takip edin</p><a href="https://www.instagram.com/livexatr/?utm_source=site&amp;utm_medium=referral&amp;utm_campaign=takip" target="_blank" rel="noopener">Instagram @livexatr<span class="gorunmez"> (yeni sekmede açılır)</span></a><a href="https://www.facebook.com/profile.php?id=61594972752600&amp;utm_source=site&amp;utm_medium=referral&amp;utm_campaign=takip" target="_blank" rel="noopener">Facebook Livexa<span class="gorunmez"> (yeni sekmede açılır)</span></a></div>
     </div>
     <div class="altbilgi__izgara">
@@ -357,6 +360,7 @@
 <script src="donusum.js" defer></script>
 <script src="v24.js" defer></script>
 <script src="wa.js" defer></script>
+<script src="huni.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "496e7e88896e4d18872900271c8b6db5"}'></script>
 </body>
 </html>
