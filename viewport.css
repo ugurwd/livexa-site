@@ -1,0 +1,17 @@
+/* LIVEXA — viewport düzeltmeleri (IE-2026-10-28-viewport). Bütün sayfalarda en son yüklenir. */
+
+/* 1. Okunurluk: 12 px altı etiket ve tablo başlıkları 12 px'e çıkar */
+.uo-paket__etiket, .dn-paket__etiket, .uo-karar__etiket, .uo-cubuk__fiyat { font-size: 12px; }
+.doz th, .kunye thead th { font-size: 12px; }
+@media (max-width: 380px) { .uo-cubuk__fiyat { letter-spacing: 0; } }
+
+/* 2. Dokunma hedefi: onay kutuları en az 24 × 24 px (WCAG 2.5.8) */
+#sa-form input[type="checkbox"] { width: 24px; height: 24px; flex: 0 0 24px; }
+
+/* 3. Yatay telefon ve kısa tablet ekranı: sofra kartları ekran yüksekliğine sığar (4:5 kare; başlık ve kenar payı düşülür) */
+@media (max-width: 1099px) and (orientation: landscape) and (max-height: 600px) {
+  .v18-durak { flex-basis: min(56vw, calc((100svh - 150px) * .8)); }
+}
+@media (max-width: 759px) and (orientation: landscape) {
+  .v18-durak { flex-basis: min(84vw, calc((100svh - 150px) * .8)); }
+}
