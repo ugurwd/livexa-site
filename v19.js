@@ -53,10 +53,16 @@
   var panoramaAcik = function () { return sofra && genis.matches && !azHareket.matches && !kok.classList.contains('v18-sabitlemesiz'); };
 
   // Her durağın p değeri: o durağın fotoğrafını pencerenin ortasına getiren şerit kayması (uçlarda sınırlanır)
+  // Ölçüm bir kez yapılır (boyut değişince yenilenir); her karede düzen okunmaz.
+  var durakPOnbellek = null;
   var durakP = function () {
+    if (durakPOnbellek) return durakPOnbellek;
     var pw = pencere.clientWidth, en = Math.max(1, serit.offsetWidth - pw);
-    return duraklar.map(function (d) { return sinirla((d.offsetLeft + d.offsetWidth / 2 - pw / 2) / en, 0, 1); });
+    durakPOnbellek = duraklar.map(function (d) { return sinirla((d.offsetLeft + d.offsetWidth / 2 - pw / 2) / en, 0, 1); });
+    return durakPOnbellek;
   };
+  window.addEventListener('resize', function () { durakPOnbellek = null; });
+  window.addEventListener('load', function () { durakPOnbellek = null; });
   var enYakinDurak = function (p) {
     var ps = durakP(), k = 0;
     for (var i = 1; i < ps.length; i++) if (Math.abs(ps[i] - p) < Math.abs(ps[k] - p)) k = i;
@@ -108,10 +114,30 @@
     var r = iz.getBoundingClientRect(), y = window.scrollY;
     return { bas: Math.round(y + r.top - ust), son: Math.round(y + r.bottom - window.innerHeight) };
   };
+  // Kilit kayma bitene kadar sürer (Lenis onComplete); yedek süre 1,2 sn.
+  // Kayma sırasında gelen ayrı bir hareket (çentik) kaybolmaz: sıraya alınır, kayma bitince o yöne bir adım daha atılır.
+  var bekleyenYon = 0, adimSonrasi = false;
+  var adimAt = null;
   var git = function (hedefY) {
-    adimKilit = Date.now() + 950;
-    if (window.livexaLenis) window.livexaLenis.scrollTo(hedefY, { duration: 0.85, lock: true, force: true });
-    else window.scrollTo({ top: hedefY, behavior: 'smooth' });
+    adimKilit = Date.now() + 1200; adimSonrasi = true;
+    var bitti = function () {
+      adimKilit = 0;
+      if (bekleyenYon) { var yn = bekleyenYon; bekleyenYon = 0; adimAt(yn); }
+    };
+    if (window.livexaLenis) window.livexaLenis.scrollTo(hedefY, { duration: 0.55, lock: true, force: true, onComplete: bitti });
+    else { window.scrollTo({ top: hedefY, behavior: 'smooth' }); setTimeout(bitti, 600); }
+  };
+  var hedefBul = function (y, yon) {
+    var n = duraklar.length, i, v;
+    if (yon > 0) { for (i = 0; i < n; i++) { v = durakY(i); if (v > y + 3) return v; } }
+    else { for (i = n - 1; i >= 0; i--) { v = durakY(i); if (v < y - 3) return v; } }
+    return null;
+  };
+  // Sıradaki adım: duraklar içinde bir sonraki/önceki; uçtaysa bölümden çıkış için normal kaydırma payı
+  adimAt = function (yon) {
+    var y = window.scrollY, h = hedefBul(y, yon);
+    if (h !== null) git(h);
+    else if (window.livexaLenis) window.livexaLenis.scrollTo(y + yon * 100);
   };
   var durakta = function (y) { for (var i = 0; i < duraklar.length; i++) if (Math.abs(durakY(i) - y) <= 3) return true; return false; };
   window.addEventListener('wheel', function (e) {
@@ -121,14 +147,19 @@
     var y = window.scrollY, z = bolge(), n = duraklar.length, yon = e.deltaY > 0 ? 1 : -1;
     var L = window.livexaLenis, hedefCizgi = (L && typeof L.targetScroll === 'number' ? L.targetScroll : y) + e.deltaY;
     // Bölüme giriş: bu olay kaydırmayı bölgenin içine taşıyacaksa şerit uçtaki durağa oturur (atalet ortada bırakmaz)
-    if (y < z.bas - 2) { if (yon > 0 && hedefCizgi > z.bas) { e.preventDefault(); e.stopPropagation(); git(z.bas); } return; }
-    if (y > z.son + 2) { if (yon < 0 && hedefCizgi < z.son) { e.preventDefault(); e.stopPropagation(); git(z.son); } return; }
-    var hedefY = null, i, v;
-    if (yon > 0) { for (i = 0; i < n; i++) { v = durakY(i); if (v > y + 3) { hedefY = v; break; } } }
-    else { for (i = n - 1; i >= 0; i--) { v = durakY(i); if (v < y - 3) { hedefY = v; break; } } }
-    if (hedefY === null) return;                              // son duraktan aşağı / ilk duraktan yukarı: sayfa akar
+    var giris = (y < z.bas - 2 && yon > 0 && hedefCizgi > z.bas) ? z.bas : (y > z.son + 2 && yon < 0 && hedefCizgi < z.son) ? z.son : null;
+    if (y < z.bas - 2 || y > z.son + 2) {
+      if (simdi < adimKilit && (giris !== null || bekleyenYon)) { e.preventDefault(); e.stopPropagation(); if (aradanGecen >= 160) bekleyenYon = yon; return; }
+      if (giris !== null) { e.preventDefault(); e.stopPropagation(); git(giris); }
+      return;
+    }
+    // Adım atılmış bir hareketin devamı (aralıksız olaylar) bölümden dışarı sızmaz; hareket bitene kadar yutulur
+    if (aradanGecen >= 160) adimSonrasi = false;
+    else if (adimSonrasi) { e.preventDefault(); e.stopPropagation(); return; }
+    var hedefY = hedefBul(y, yon);
+    if (hedefY === null && simdi >= adimKilit) return;        // son duraktan aşağı / ilk duraktan yukarı: sayfa akar
     e.preventDefault(); e.stopPropagation();
-    if (simdi < adimKilit) return;                            // kayma sürüyor
+    if (simdi < adimKilit) { if (aradanGecen >= 160) bekleyenYon = yon; return; }  // kayma sürüyor: ayrı hareketi sıraya al
     if (aradanGecen < 160 && durakta(y)) return;              // aynı hareketin devamı (durakta beklerken)
     git(hedefY);
   }, { passive: false, capture: true });
