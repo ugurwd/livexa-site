@@ -84,6 +84,37 @@
     metinSec(Math.round(p * (duraklar.length - 1)));
   };
 
+  // ---------- Sofra adımları: masaüstünde her tekerlek/trackpad hareketi bir sonraki (önceki) bileşene geçer ----------
+  // Sabitleme bölgesinde tekerlek olayı Lenis'e ulaşmadan yakalanır; sayfa, hedef durağın kaydırma konumuna götürülür.
+  // Kayma sürerken ve hareket durmadan (trackpad ataleti) yeni adım alınmaz. Uçlarda olay serbest kalır, sayfa akar.
+  var adimKilit = 0, sonTekerlek = 0;
+  var durakY = function (k) {
+    var vh = window.innerHeight, r = iz.getBoundingClientRect();
+    var toplam = r.height - (vh - ust), bekle = 0.5 * vh;
+    var gecen = bekle + (k / (duraklar.length - 1)) * Math.max(1, toplam - 2 * bekle);
+    return window.scrollY + r.top - ust + gecen;
+  };
+  if (sofra) sofra.addEventListener('wheel', function (e) {
+    if (!panoramaAcik() || e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+    var simdi = Date.now(), aradanGecen = simdi - sonTekerlek;
+    sonTekerlek = simdi;
+    var r = iz.getBoundingClientRect();
+    if (r.top > ust + 2 || r.bottom < window.innerHeight - 2) return;   // sabitleme bölgesi dışında
+    var n = duraklar.length, k = etkin < 0 ? 0 : etkin, yon = e.deltaY > 0 ? 1 : -1;
+    var hedef = k + yon;
+    var y = window.scrollY;
+    var basY = y + r.top - ust, sonuY = y + r.bottom - window.innerHeight;  // sabitlemenin başı ve sonu
+    if (hedef < 0 && y <= basY + 4) return;                             // en baştan yukarı: sayfa akar
+    if (hedef > n - 1 && y >= sonuY - 4) return;                        // en sondan aşağı: sayfa akar
+    e.preventDefault(); e.stopPropagation();
+    if (simdi < adimKilit || aradanGecen < 140) return;                 // kayma ya da aynı hareketin devamı
+    // son duraktan sonra bölüm sonuna, ilk duraktan önce bölüm başına: boş kaydırma kalmaz
+    var hedefY = hedef > n - 1 ? sonuY : hedef < 0 ? basY : durakY(hedef);
+    adimKilit = simdi + 900;
+    if (window.livexaLenis) window.livexaLenis.scrollTo(hedefY, { duration: 0.85, lock: true, force: true });
+    else window.scrollTo({ top: hedefY, behavior: 'smooth' });
+  }, { passive: false, capture: true });
+
   // ---------- Hero çıkışı ----------
   var heroKart = document.getElementById('hero-kart');
   var gunes = document.querySelector('.uo-gunes');

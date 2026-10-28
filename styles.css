@@ -1083,3 +1083,5 @@ body[data-odeme="acik"] #odeme-dugme[aria-disabled="true"],body[data-odeme="acik
   .gezinme__linkler a.gezinme__al:hover{background:var(--mandalina)}
 }
 .altbilgi__iletisim{flex-basis:100%;font-size:14px;color:#FFF4DF}.altbilgi__iletisim a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.dn-video-dugme{width:44px;height:44px;padding:0;display:grid;place-items:center}.dn-video-dugme::before{content:"";width:12px;height:14px;border-left:4px solid currentColor;border-right:4px solid currentColor;box-sizing:border-box}.dn-video-dugme.durdu::before{width:0;height:0;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent currentColor;margin-left:4px}
+@media (max-width:599px){.doz td.beyansiz{display:none}}
