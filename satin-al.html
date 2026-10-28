@@ -93,38 +93,46 @@
       <form class="sa-form" id="sa-form" novalidate aria-labelledby="sa-form-h">
         <h3 class="sa-form__h" id="sa-form-h">Teslimat ve iletişim bilgileriniz</h3>
         <p class="sa-form__not">Bütün alanları doldurmanız gerekiyor; fatura bilgisi isteğe bağlı.</p>
-                <div class="sa-alanlar">
+        <p class="sa-form__ozet" id="sa-form-ozet" role="alert" hidden></p>
+        <div class="sa-alanlar">
         <div class="sa-alan">
           <label for="sa-ad">Ad</label>
           <input id="sa-ad" name="ad" type="text" autocomplete="given-name" maxlength="60" aria-required="true">
-                  </div>
+          <p class="sa-alan__hata" id="sa-ad-hata" hidden></p>
+        </div>
         <div class="sa-alan">
           <label for="sa-soyad">Soyad</label>
           <input id="sa-soyad" name="soyad" type="text" autocomplete="family-name" maxlength="60" aria-required="true">
-                  </div>
+          <p class="sa-alan__hata" id="sa-soyad-hata" hidden></p>
+        </div>
         <div class="sa-alan">
           <label for="sa-telefon">Cep telefonu</label>
           <input id="sa-telefon" name="telefon" type="tel" autocomplete="tel" maxlength="20" inputmode="tel" aria-required="true" aria-describedby="sa-telefon-yardim">
           <p class="sa-alan__yardim" id="sa-telefon-yardim">Örnek: 05XX XXX XX XX</p>
-                  </div>
+          <p class="sa-alan__hata" id="sa-telefon-hata" hidden></p>
+        </div>
         <div class="sa-alan sa-alan--tam">
           <label for="sa-eposta">E-posta</label>
           <input id="sa-eposta" name="eposta" type="email" autocomplete="email" maxlength="100" aria-required="true" aria-describedby="sa-eposta-yardim">
           <p class="sa-alan__yardim" id="sa-eposta-yardim">Ön Bilgilendirme Formu'nu, Mesafeli Satış Sözleşmesi'ni ve e-Arşiv faturanızı bu adrese gönderiyoruz.</p>
-                  </div>
+          <p class="sa-alan__hata" id="sa-eposta-hata" hidden></p>
+        </div>
         <div class="sa-alan">
           <label for="sa-il">İl</label>
           <input id="sa-il" name="il" type="text" autocomplete="address-level1" maxlength="40" aria-required="true">
-                  </div>
+          <p class="sa-alan__hata" id="sa-il-hata" hidden></p>
+        </div>
         <div class="sa-alan">
           <label for="sa-ilce">İlçe</label>
           <input id="sa-ilce" name="ilce" type="text" autocomplete="address-level2" maxlength="40" aria-required="true">
-                  </div>
+          <p class="sa-alan__hata" id="sa-ilce-hata" hidden></p>
+        </div>
         <div class="sa-alan sa-alan--tam">
           <label for="sa-adres">Adres</label>
           <textarea id="sa-adres" name="adres" rows="3" autocomplete="street-address" maxlength="300" aria-required="true" aria-describedby="sa-adres-yardim"></textarea>
           <p class="sa-alan__yardim" id="sa-adres-yardim">Mahalle, sokak, bina ve daire numarası</p>
-                  </div>
+          <p class="sa-alan__hata" id="sa-adres-hata" hidden></p>
+        </div>
         </div>
         <label class="uo-onay sa-form__fatura-kutu"><input type="checkbox" id="sa-fatura-kutu" aria-controls="sa-fatura"> <span>Fatura bilgisi girmek istiyorum</span></label>
         <div class="sa-alanlar" id="sa-fatura" hidden>
@@ -132,21 +140,25 @@
           <label for="sa-fatura-unvan">Unvan</label>
           <input id="sa-fatura-unvan" name="fatura.unvan" type="text" autocomplete="organization" maxlength="150" aria-required="true" aria-describedby="sa-fatura-unvan-yardim">
           <p class="sa-alan__yardim" id="sa-fatura-unvan-yardim">Bireysel alıcıysanız adınızı ve soyadınızı yazın.</p>
-                  </div>
+          <p class="sa-alan__hata" id="sa-fatura-unvan-hata" hidden></p>
+        </div>
         <div class="sa-alan">
           <label for="sa-fatura-vergiDairesi">Vergi dairesi</label>
           <input id="sa-fatura-vergiDairesi" name="fatura.vergiDairesi" type="text" autocomplete="off" maxlength="80">
-                  </div>
+          <p class="sa-alan__hata" id="sa-fatura-vergiDairesi-hata" hidden></p>
+        </div>
         <div class="sa-alan sa-alan--tam">
           <label for="sa-fatura-vergiNo">Vergi numarası</label>
           <input id="sa-fatura-vergiNo" name="fatura.vergiNo" type="text" autocomplete="off" maxlength="20" inputmode="numeric" aria-required="true" aria-describedby="sa-fatura-vergiNo-yardim">
           <p class="sa-alan__yardim" id="sa-fatura-vergiNo-yardim">Bireysel alıcıysanız T.C. kimlik numaranızı yazabilirsiniz.</p>
-                  </div>
+          <p class="sa-alan__hata" id="sa-fatura-vergiNo-hata" hidden></p>
+        </div>
         </div>
         <p class="sa-form__kvkk">Sipariş için sağlık bilginiz istenmez. Bilgilerinizi nasıl işlediğimizi <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a>'nde anlatıyoruz.</p>
         <label class="uo-onay"><input type="checkbox" id="odeme-onay"> <span><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formunu</a> okudum, <a href="mesafeli-satis-sozlesmesi.html">mesafeli satış sözleşmesini</a> onaylıyorum.</span></label>
         <p class="uo-odeme"><button type="submit" class="dugme uo-dugme" id="odeme-dugme" disabled aria-disabled="true">Ödeme sayfasına geç</button></p>
-              </form>
+        <p class="sa-form__servis" id="sa-form-servis" role="alert" hidden></p>
+      </form>
       <section class="sa-odeme" id="sa-odeme" aria-labelledby="sa-odeme-h" hidden>
         <h3 class="sa-odeme__h" id="sa-odeme-h" tabindex="-1">Ödeme</h3>
         <p>PayTR'nin güvenli ödeme sayfası hemen aşağıda açılıyor. Kart bilgilerinizi bu alana girin; bu bilgiler bu siteye ve bize gelmez. Tutarı tek çekimle alıyoruz.</p>
