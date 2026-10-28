@@ -1082,3 +1082,4 @@ body[data-odeme="acik"] #odeme-dugme[aria-disabled="true"],body[data-odeme="acik
   .gezinme__linkler a.gezinme__al{justify-content:center;margin-top:16px;min-height:56px;border:0;border-radius:999px;background:var(--safran);font-family:var(--sans);font-size:17px;letter-spacing:0}
   .gezinme__linkler a.gezinme__al:hover{background:var(--mandalina)}
 }
+.altbilgi__iletisim{flex-basis:100%;font-size:14px;color:#FFF4DF}.altbilgi__iletisim a{color:inherit;text-decoration:underline;text-underline-offset:3px}
