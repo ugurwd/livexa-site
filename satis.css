@@ -1,0 +1,39 @@
+/* LIVEXA — satış modu: satın al sipariş formu, ödeme bölümü, sonuç sayfaları (IE-2026-10-28-satis-modu) */
+.sa-form{margin-top:26px;padding-top:22px;border-top:2px solid rgba(34,26,74,.14)}
+.sa-form__h{font:800 21px/1.25 var(--disp);margin:0 0 6px;color:var(--murekkep)}
+.sa-form__not{font-size:15px;margin:0 0 14px;color:#4A4270}
+.sa-form__ozet{margin:0 0 14px;padding:10px 14px;border-left:4px solid var(--mandalina-metin);background:#FFFFFF;color:var(--mandalina-metin);font-weight:700;font-size:15px}
+.sa-alanlar{display:grid;grid-template-columns:1fr 1fr;gap:14px 14px}
+.sa-alan{display:flex;flex-direction:column;gap:5px;min-width:0}
+.sa-alan--tam{grid-column:1 / -1}
+.sa-alan label{font-weight:700;font-size:15px;color:var(--murekkep)}
+.sa-alan input,.sa-alan textarea{font:400 16px/1.4 var(--sans);color:var(--murekkep);background:#FFFFFF;border:2px solid rgba(34,26,74,.45);border-radius:12px;padding:11px 13px;min-height:48px;width:100%;box-sizing:border-box}
+.sa-alan textarea{min-height:88px;resize:vertical}
+.sa-alan input:focus-visible,.sa-alan textarea:focus-visible{outline:3px solid var(--safran);outline-offset:1px;border-color:var(--murekkep)}
+.sa-alan input[aria-invalid="true"],.sa-alan textarea[aria-invalid="true"]{border-color:var(--mandalina-metin);border-width:3px}
+.sa-alan input[readonly],.sa-alan textarea[readonly]{background:rgba(34,26,74,.05);border-style:dashed}
+.sa-alan__yardim{font-size:13.5px;line-height:1.45;margin:0;color:#4A4270}
+.sa-alan__hata{font-size:14px;line-height:1.4;margin:0;color:var(--mandalina-metin);font-weight:700}
+.sa-form__fatura-kutu{margin-top:16px}
+#sa-fatura{margin-top:12px}
+.sa-form__kvkk{font-size:14px;margin:16px 0 0;color:#4A4270}
+.sa-form__kvkk a{color:var(--murekkep)}
+.sa-form .uo-odeme{margin-top:14px}
+#odeme-dugme{width:100%}
+#odeme-dugme:disabled{opacity:.55;cursor:not-allowed}
+#odeme-dugme[aria-busy="true"]{opacity:.8;cursor:progress}
+.sa-form__servis{margin:12px 0 0;padding:10px 14px;border-left:4px solid var(--mandalina-metin);background:#FFFFFF;color:var(--murekkep);font-size:15px;line-height:1.5}
+.sa-odeme{margin-top:24px;padding-top:20px;border-top:2px solid rgba(34,26,74,.14)}
+.sa-odeme__h{font:800 21px/1.25 var(--disp);margin:0 0 6px;color:var(--murekkep)}
+.sa-odeme__h:focus{outline:none}
+.sa-odeme p{font-size:15px;margin:0 0 14px}
+.sa-odeme__alan{min-height:120px}
+.sa-odeme__alan iframe{display:block;width:100%;min-height:600px;border:0;background:#FFFFFF;border-radius:12px}
+.sa-odeme__sahte{display:flex;align-items:center;justify-content:center;min-height:420px;border:3px dashed rgba(34,26,74,.4);border-radius:12px;background:#FFFFFF;font-weight:700;color:#4A4270;text-align:center;padding:20px}
+.sa-modul__dugme{margin:18px 0 0}
+body.sa-odeme-acik .uo-cubuk{display:none!important}
+.os-no strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+.os-dugmeler{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:759px){
+  .sa-alanlar{grid-template-columns:1fr}
+}
