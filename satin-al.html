@@ -31,6 +31,9 @@
 <link rel="stylesheet" href="huni.css">
 <link rel="stylesheet" href="satis.css">
 <link rel="stylesheet" href="viewport.css">
+<script src="lx.js" defer></script>
+<link rel="stylesheet" href="promo.css">
+<script src="promo-kod.js" defer></script>
 </head>
 <body data-odeme="acik">
 <a class="atla" href="#ana">İçeriğe atla</a>
@@ -153,6 +156,27 @@
           <p class="sa-alan__yardim" id="sa-fatura-vergiNo-yardim">Bireysel alıcıysanız T.C. kimlik numaranızı yazabilirsiniz.</p>
           <p class="sa-alan__hata" id="sa-fatura-vergiNo-hata" hidden></p>
         </div>
+        </div>
+        <div class="sa-alan sa-alan--tam sa-promo" id="sa-promo">
+          <label for="sa-promo-kod">Promosyon kodu <span class="sa-promo__ist">(isteğe bağlı)</span></label>
+          <div class="sa-promo__satir">
+            <input id="sa-promo-kod" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" aria-describedby="sa-promo-sonuc">
+            <button type="button" class="sa-promo__dugme" id="sa-promo-uygula">Uygula</button>
+          </div>
+          <p class="sa-promo__sonuc" id="sa-promo-sonuc" aria-live="polite"></p>
+          <template data-promo>
+            <span data-m="bekle">Kod kontrol ediliyor…</span>
+            <span data-m="tamam">{kod} kodu uygulandı: {indirim} indirim. Ödenecek tutar {tutar} (KDV ve kargo dahil).</span>
+            <span data-m="kaldir">Kaldır</span>
+            <span data-m="bos">Önce kodu yazar mısınız?</span>
+            <span data-m="yok">Bu kod geçerli görünmüyor. Kodu kontrol eder misiniz?</span>
+            <span data-m="bitti">Bu kodun kullanım süresi dolmuş.</span>
+            <span data-m="tukendi">Bu kodun kullanım sınırı dolmuş.</span>
+            <span data-m="baslamadi">Bu kod henüz geçerli değil.</span>
+            <span data-m="paket">Bu kod seçtiğiniz pakette geçerli değil.</span>
+            <span data-m="servis">Kod şu an kontrol edilemedi. Birkaç dakika sonra tekrar dener misiniz?</span>
+            <span data-m="odemeYok">Ödeme başlatılmadı; kodu kaldırıp indirimsiz devam edebilir ya da başka bir kod deneyebilirsiniz.</span>
+          </template>
         </div>
         <p class="sa-form__kvkk">Sipariş için sağlık bilginiz istenmez. Bilgilerinizi nasıl işlediğimizi <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a>'nde anlatıyoruz.</p>
         <label class="uo-onay"><input type="checkbox" id="odeme-onay"> <span><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formunu</a> okudum, <a href="mesafeli-satis-sozlesmesi.html">mesafeli satış sözleşmesini</a> onaylıyorum.</span></label>

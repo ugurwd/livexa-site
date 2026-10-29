@@ -7,8 +7,8 @@
 (function () {
   'use strict';
   var UC = 'https://livexa-paytr.wakaresearch.com/odeme/baslat';
-  var ONBILGI = 'c8b6b8771e70bd67';
-  var SOZLESME = 'fd2efd9d97ddd08e';
+  var ONBILGI = '1608f1bbfd4a900e';   // ön bilgilendirme v13 (IE-2026-10-28-promo)
+  var SOZLESME = 'e7e26dcf43bc2493';   // mesafeli satış v12
   var PAYTR_IFRAME = 'https://www.paytr.com/odeme/guvenli/';
   var PAYTR_BOYUT = 'https://www.paytr.com/js/iframeResizer.min.js';
 
@@ -136,6 +136,10 @@
   }
 
   function gonder(g) {
+    // Analitik kanal etiketi (lx.js): Worker ödeme dönüş adresine ekler; sipariş kaydına yazılmaz
+    g.lx = typeof window.lxAtif === 'function' ? window.lxAtif() : '';
+    // Promosyon kodu (promo-kod.js); indirim Worker'da hesaplanır
+    g.promo = typeof window.lxPromoKod === 'function' ? window.lxPromoKod() : '';
     return fetch(UC, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -229,6 +233,8 @@
         hatalariGoster(h);
         return;
       }
+      // Kod ödeme anında geçersiz çıktı (süre/sınır değişti): ödeme başlatılmaz, müşteri kodu kaldırıp devam edebilir
+      if (y.durum === 400 && v.hata === 'promo') { if (typeof window.lxPromoRed === 'function') window.lxPromoRed(v.neden); dugmeDurum(); return; }
       if (y.durum === 400 && (v.hata === 'istek' || v.hata === 'paket' || v.hata === 'onay')) servisHata('red');
       else servisHata('servis');
       dugmeDurum();
