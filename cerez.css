@@ -1,0 +1,54 @@
+/* LIVEXA · çerez bandı ve Çerez Tercihleri paneli (IE-2026-10-30-meta-web). Metin: 2026-10-30-cerez-bandi.md.
+   Bant: alt kenarda, çerez duvarı değil (sayfa kullanılabilir kalır; sayfa sonuna bant yüksekliği kadar boşluk eklenir).
+   "Kabul et" ve "Reddet" aynı sınıf, aynı boyut, aynı renk ağırlığı (bant md, koşul 1).
+   Panel: yerel <dialog>; pazarlama anahtarı role="switch", varsayılan kapalı. */
+html.lx-cerez-acik body{padding-bottom:var(--lx-cerez-h,0px)}
+html.lx-cerez-acik .wa-dugme,html.lx-cerez-acik .uo-cubuk{visibility:hidden}
+
+.lx-cerez{position:fixed;z-index:40;left:0;right:0;bottom:0;background:var(--krem);color:var(--murekkep);border-top:3px solid var(--murekkep);box-shadow:0 -10px 30px rgba(34,26,74,.14);padding:16px 0 calc(16px + env(safe-area-inset-bottom))}
+.lx-cerez__ic{display:grid;gap:12px 32px;align-items:center}
+.lx-cerez__bas{font:800 19px/1.15 var(--disp);letter-spacing:-.01em;margin:0 0 6px}
+.lx-cerez__metin{margin:0;font-size:15px;line-height:1.5;max-width:76ch}
+.lx-cerez__baglantilar{display:flex;flex-wrap:wrap;gap:4px 18px;margin:8px 0 0;font-size:14px}
+.lx-cerez__baglantilar a,.lx-cerez__baglanti{font:inherit;font-weight:700;color:var(--murekkep);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em;text-decoration-color:var(--mandalina)}
+.lx-cerez__baglanti:hover{color:var(--mandalina)}
+.lx-cerez__dugmeler{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lx-cerez__dugme{min-height:48px;padding:0 22px;width:100%}
+@media (min-width:900px){
+  .lx-cerez{padding:20px 0 calc(20px + env(safe-area-inset-bottom))}
+  .lx-cerez__ic{grid-template-columns:minmax(0,1fr) auto}
+  .lx-cerez__dugmeler{grid-template-columns:repeat(2,minmax(150px,1fr))}
+}
+@media (max-width:520px){
+  .lx-cerez{padding:12px 0 calc(12px + env(safe-area-inset-bottom))}
+  .lx-cerez__bas{font-size:17px;margin-bottom:4px}
+  .lx-cerez__metin{font-size:14px;line-height:1.45}
+  .lx-cerez__baglantilar{font-size:13px;gap:2px 14px;margin-top:6px}
+  .lx-cerez__dugme{min-height:46px;padding:0 12px}
+}
+
+/* panel */
+.lx-cerez-panel{width:min(600px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;padding:0;border:3px solid var(--murekkep);border-radius:var(--r-kart);background:var(--krem);color:var(--murekkep);box-shadow:0 20px 60px rgba(34,26,74,.3)}
+.lx-cerez-panel::backdrop{background:rgba(34,26,74,.55)}
+.lx-cerez-panel__ic{padding:clamp(20px,4vw,32px)}
+.lx-cerez-panel__bas{font:800 clamp(26px,4vw,34px)/1.05 var(--disp);letter-spacing:-.02em;margin:0 0 10px}
+.lx-cerez-panel__bas:focus{outline:none}
+.lx-cerez-panel__giris{margin:0 0 18px;font-size:16px}
+.lx-cerez-grup{background:var(--beyaz);border-radius:18px;padding:16px 18px;margin:0 0 12px}
+.lx-cerez-grup__ust{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 6px}
+.lx-cerez-grup__ad{font:800 17px/1.2 var(--sans);margin:0}
+.lx-cerez-grup__durum{font-size:13px;font-weight:800;color:var(--murekkep);white-space:nowrap;background:rgba(127,209,185,.45);border-radius:999px;padding:3px 10px}
+.lx-cerez-grup p{margin:0 0 6px;font-size:15px;line-height:1.5}
+.lx-cerez-grup p:last-child{margin-bottom:0}
+.lx-cerez-anahtar{display:inline-flex;align-items:center;gap:10px;flex:none;background:none;border:0;padding:4px 0;cursor:pointer;font:700 14px var(--sans);color:var(--murekkep)}
+.lx-cerez-anahtar__ray{position:relative;width:52px;height:30px;border-radius:999px;background:rgba(34,26,74,.18);border:2px solid var(--murekkep);transition:background-color .18s ease}
+.lx-cerez-anahtar__ray::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--beyaz);border:2px solid var(--murekkep);transition:transform .18s ease}
+.lx-cerez-anahtar[aria-checked="true"] .lx-cerez-anahtar__ray{background:var(--nane-koyu)}
+.lx-cerez-anahtar[aria-checked="true"] .lx-cerez-anahtar__ray::after{transform:translateX(22px)}
+.lx-cerez-anahtar__etiket{min-width:3.6em;text-align:left}
+.lx-cerez-panel__ayrinti{margin:14px 0 18px;font-size:15px}
+.lx-cerez-panel__ayrinti a{font-weight:700}
+.lx-cerez-panel__alt{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.lx-cerez-panel__durum{margin:0;font-weight:700;color:var(--murekkep)}
+@media (prefers-reduced-motion:reduce){.lx-cerez-anahtar__ray,.lx-cerez-anahtar__ray::after{transition:none}}
+@media print{.lx-cerez,.lx-cerez-panel{display:none!important}}

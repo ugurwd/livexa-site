@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="huni.css">
 <link rel="stylesheet" href="satis.css">
 <link rel="stylesheet" href="viewport.css">
+<link rel="stylesheet" href="cerez.css">
 <script src="lx.js" defer></script>
 </head>
 <body data-odeme="kapali">
@@ -73,7 +74,7 @@ E-posta: siparis@livexa.com.tr</p>
   <div class="kap">
     <div class="altbilgi__ust">
       <a class="altbilgi__marka" href="index.html"><span class="gezinme__logo">LIVE<span class="x">X</span>A</span></a>
-      <nav class="baglantilar hn-baglantilar" aria-label="Site bağlantıları"><div class="v18-grup"><p class="v18-grup__bas">Ürün</p><a href="icerik-ve-kullanim.html">İçerik ve kullanım</a><a href="sss.html">Sık sorulanlar</a><a href="satin-al.html">Satın al</a></div><div class="v18-grup"><p class="v18-grup__bas">Alışveriş</p><a href="teslimat-ve-kargo.html">Teslimat ve kargo</a><a href="iade-ve-cayma.html">İade ve cayma</a><a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a><a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a></div><div class="v18-grup"><p class="v18-grup__bas">Kurumsal</p><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a><a href="kunye.html">Künye ve satıcı bilgileri</a></div><div class="v18-grup"><p class="v18-grup__bas">Kişisel veriler</p><a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a><a href="gizlilik-ve-cerez.html">Gizlilik politikası</a><a href="gizlilik-ve-cerez.html">Çerez tercihleri</a></div></nav>
+      <nav class="baglantilar hn-baglantilar" aria-label="Site bağlantıları"><div class="v18-grup"><p class="v18-grup__bas">Ürün</p><a href="icerik-ve-kullanim.html">İçerik ve kullanım</a><a href="sss.html">Sık sorulanlar</a><a href="satin-al.html">Satın al</a></div><div class="v18-grup"><p class="v18-grup__bas">Alışveriş</p><a href="teslimat-ve-kargo.html">Teslimat ve kargo</a><a href="iade-ve-cayma.html">İade ve cayma</a><a href="on-bilgilendirme-formu.html">Ön Bilgilendirme Formu</a><a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a></div><div class="v18-grup"><p class="v18-grup__bas">Kurumsal</p><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a><a href="kunye.html">Künye ve satıcı bilgileri</a></div><div class="v18-grup"><p class="v18-grup__bas">Kişisel veriler</p><a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a><a href="gizlilik-ve-cerez.html">Gizlilik politikası</a><a href="gizlilik-ve-cerez.html" data-cerez-tercih aria-haspopup="dialog">Çerez tercihleri</a></div></nav>
       <div class="sos-grup sos-grup--alt" role="group" aria-labelledby="sos-grup-bas"><p class="sos-grup__bas" id="sos-grup-bas">Bizi takip edin</p><a href="https://www.instagram.com/livexatr/?utm_source=site&amp;utm_medium=referral&amp;utm_campaign=takip" target="_blank" rel="noopener">Instagram @livexatr<span class="gorunmez"> (yeni sekmede açılır)</span></a><a href="https://www.facebook.com/profile.php?id=61594972752600&amp;utm_source=site&amp;utm_medium=referral&amp;utm_campaign=takip" target="_blank" rel="noopener">Facebook Livexa<span class="gorunmez"> (yeni sekmede açılır)</span></a></div>
     </div>
     <div class="altbilgi__izgara">
@@ -102,6 +103,42 @@ E-posta: siparis@livexa.com.tr</p>
 <script src="app.js" defer></script>
 <script src="sonuc.js" defer></script>
 <script src="wa.js" defer></script>
+<template id="lx-cerez-sablon">
+<div class="lx-cerez" role="region" aria-label="Çerez tercihi" hidden>
+  <div class="kap lx-cerez__ic">
+    <div>
+      <h2 class="lx-cerez__bas">Çerez tercihiniz</h2>
+      <p class="lx-cerez__metin">Reklamlarımızın sonuçlarını ölçmek ve reklamlarımızı daha uygun kişilere göstermek için Meta'nın (Facebook, Instagram) pazarlama çerezlerini kullanmak istiyoruz. İzin verirseniz ziyaret ve sipariş bilgileriniz Meta'ya iletilir; vermezseniz site aynı şekilde çalışır.</p>
+      <p class="lx-cerez__baglantilar"><a href="gizlilik-ve-cerez.html">Çerez politikası</a><a href="kvkk-aydinlatma.html">KVKK aydınlatma metni</a><button type="button" class="lx-cerez__baglanti" data-cerez="duzenle" aria-haspopup="dialog">Tercihleri düzenle</button></p>
+    </div>
+    <div class="lx-cerez__dugmeler">
+      <button type="button" class="dugme dugme--dolu lx-cerez__dugme" data-cerez="kabul">Kabul et</button>
+      <button type="button" class="dugme dugme--dolu lx-cerez__dugme" data-cerez="red">Reddet</button>
+    </div>
+  </div>
+</div>
+<dialog class="lx-cerez-panel" aria-labelledby="lx-cerez-panel-bas">
+  <div class="lx-cerez-panel__ic">
+    <h2 class="lx-cerez-panel__bas" id="lx-cerez-panel-bas" tabindex="-1">Çerez tercihleri</h2>
+    <p class="lx-cerez-panel__giris">Sitede hangi çerezlerin çalışacağını buradan seçebilirsiniz. Seçiminizi istediğiniz zaman değiştirebilirsiniz.</p>
+    <div class="lx-cerez-grup">
+      <div class="lx-cerez-grup__ust"><h3 class="lx-cerez-grup__ad">Zorunlu çerezler</h3><span class="lx-cerez-grup__durum">Her zaman açık</span></div>
+      <p>Ödeme alanında kullanılabilen çerezler ve çerez tercihinizin hatırlanması için gereken kayıt bu gruptadır. Bunlar olmadan ödeme adımı ve tercihiniz çalışmaz.</p>
+    </div>
+    <div class="lx-cerez-grup">
+      <div class="lx-cerez-grup__ust"><h3 class="lx-cerez-grup__ad" id="lx-cerez-g2">Pazarlama çerezleri (Meta)</h3><button type="button" class="lx-cerez-anahtar" role="switch" aria-checked="false" aria-labelledby="lx-cerez-g2" aria-describedby="lx-cerez-g2-ac lx-cerez-g2-not" data-cerez-anahtar><span class="lx-cerez-anahtar__ray" aria-hidden="true"></span><span class="lx-cerez-anahtar__etiket" aria-hidden="true" data-cerez-etiket data-acik="Açık" data-kapali="Kapalı">Kapalı</span></button></div>
+      <p id="lx-cerez-g2-ac">Meta pikseli, reklamlarımızın sonuçlarını ölçmek ve reklamlarımızı daha uygun kişilere göstermek için _fbp ve _fbc çerezlerini kullanır. Bu çerezler tarayıcınızda 90 gün kalır. Açarsanız ödemeniz tamamlandığında sipariş bilgileriniz de Meta'ya iletilir.</p>
+      <p id="lx-cerez-g2-not">Kapattığınızda Meta betiği artık yüklenmez, sitenin bıraktığı Meta çerezleri silinir ve Meta'ya yeni bilgi gönderilmez.</p>
+    </div>
+    <p class="lx-cerez-panel__ayrinti"><a href="gizlilik-ve-cerez.html#reklam-olcumu">Ayrıntılar: Çerez politikası</a></p>
+    <div class="lx-cerez-panel__alt">
+      <button type="button" class="dugme dugme--dolu" data-cerez="kaydet">Tercihlerimi kaydet</button>
+      <p class="lx-cerez-panel__durum" role="status" data-cerez-durum hidden>Tercihiniz kaydedildi.</p>
+    </div>
+  </div>
+</dialog>
+</template>
+<script src="cerez.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "496e7e88896e4d18872900271c8b6db5"}'></script>
 </body>
 </html>

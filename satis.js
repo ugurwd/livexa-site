@@ -140,6 +140,9 @@
     g.lx = typeof window.lxAtif === 'function' ? window.lxAtif() : '';
     // Promosyon kodu (promo-kod.js); indirim Worker'da hesaplanır
     g.promo = typeof window.lxPromoKod === 'function' ? window.lxPromoKod() : '';
+    // Meta (cerez.js): yalnız o anda geçerli bir kabul kaydı varsa; rıza yoksa alan hiç gönderilmez
+    var mt = window.lxCerez && typeof window.lxCerez.odemeMeta === 'function' ? window.lxCerez.odemeMeta() : null;
+    if (mt) g.meta = mt;
     return fetch(UC, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -218,7 +221,10 @@
       dugme.removeAttribute('aria-busy');
       kilitli = false;
       var v = y.veri || {};
-      if (y.durum === 200 && v.token) { odemeAc(v.token); return; }
+      if (y.durum === 200 && v.token) {
+        try { if (v.siparis && window.lxCerez && typeof window.lxCerez.odemeBasladi === 'function') window.lxCerez.odemeBasladi(v.siparis, g.paket); } catch (er) { /* ölçüm ödemeyi durdurmaz */ }
+        odemeAc(v.token); return;
+      }
       if (y.durum === 400 && v.hata === 'alan' && v.alanlar && v.alanlar.length) {
         var h = {};
         v.alanlar.forEach(function (k) {
