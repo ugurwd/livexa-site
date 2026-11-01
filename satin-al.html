@@ -121,23 +121,25 @@
           <p class="sa-alan__yardim" id="sa-eposta-yardim">Ön Bilgilendirme Formu'nu, Mesafeli Satış Sözleşmesi'ni ve e-Arşiv faturanızı bu adrese gönderiyoruz.</p>
           <p class="sa-alan__hata" id="sa-eposta-hata" hidden></p>
         </div>
-        <div class="sa-alan">
+        <div class="sa-alan sa-adim2">
           <label for="sa-il">İl</label>
           <input id="sa-il" name="il" type="text" autocomplete="address-level1" maxlength="40" aria-required="true">
           <p class="sa-alan__hata" id="sa-il-hata" hidden></p>
         </div>
-        <div class="sa-alan">
+        <div class="sa-alan sa-adim2">
           <label for="sa-ilce">İlçe</label>
           <input id="sa-ilce" name="ilce" type="text" autocomplete="address-level2" maxlength="40" aria-required="true">
           <p class="sa-alan__hata" id="sa-ilce-hata" hidden></p>
         </div>
-        <div class="sa-alan sa-alan--tam">
+        <div class="sa-alan sa-alan--tam sa-adim2">
           <label for="sa-adres">Adres</label>
           <textarea id="sa-adres" name="adres" rows="3" autocomplete="street-address" maxlength="300" aria-required="true" aria-describedby="sa-adres-yardim"></textarea>
           <p class="sa-alan__yardim" id="sa-adres-yardim">Mahalle, sokak, bina ve daire numarası</p>
           <p class="sa-alan__hata" id="sa-adres-hata" hidden></p>
         </div>
         </div>
+        <p class="uo-odeme sa-devam" id="sa-devam-p"><button type="button" class="dugme uo-dugme" id="sa-devam">Devam et</button></p>
+        <div class="sa-adim2" id="sa-adim2">
         <label class="uo-onay sa-form__fatura-kutu"><input type="checkbox" id="sa-fatura-kutu" aria-controls="sa-fatura"> <span>Fatura bilgisi girmek istiyorum</span></label>
         <div class="sa-alanlar" id="sa-fatura" hidden>
         <div class="sa-alan sa-alan--tam">
@@ -180,9 +182,10 @@
           </template>
         </div>
         <p class="sa-form__kvkk">Sipariş için sağlık bilginiz istenmez. Bilgilerinizi nasıl işlediğimizi <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a>'nde anlatıyoruz.</p>
-        <label class="uo-onay"><input type="checkbox" id="odeme-onay"> <span><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formunu</a> okudum, <a href="mesafeli-satis-sozlesmesi.html">mesafeli satış sözleşmesini</a> onaylıyorum.</span></label>
-        <p class="uo-odeme"><button type="submit" class="dugme uo-dugme" id="odeme-dugme" disabled aria-disabled="true">Ödeme sayfasına geç</button></p>
+        <label class="uo-onay" id="odeme-onay-satir"><input type="checkbox" id="odeme-onay"> <span><a href="on-bilgilendirme-formu.html">Ön bilgilendirme formunu</a> okudum, <a href="mesafeli-satis-sozlesmesi.html">mesafeli satış sözleşmesini</a> onaylıyorum.</span></label>
+        <p class="uo-odeme"><button type="submit" class="dugme uo-dugme" id="odeme-dugme">Ödeme sayfasına geç</button></p>
         <p class="sa-form__servis" id="sa-form-servis" role="alert" hidden></p>
+        </div>
       </form>
       <section class="sa-odeme" id="sa-odeme" aria-labelledby="sa-odeme-h" hidden>
         <h3 class="sa-odeme__h" id="sa-odeme-h" tabindex="-1">Ödeme</h3>

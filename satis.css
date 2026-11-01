@@ -37,3 +37,8 @@ body.sa-odeme-acik .uo-cubuk{display:none!important}
 @media (max-width:759px){
   .sa-alanlar{grid-template-columns:1fr}
 }
+
+/* IE-2026-11-01-form — iki adımlı form (yalnız JS yüklüyse; JS yoksa form tek parça kalır) */
+.sa-form--iki-adim:not(.sa-form--adim2) .sa-adim2{display:none}
+.sa-form--adim2 .sa-devam{display:none}
+.uo-onay--hata{outline:2px solid #b3261e;outline-offset:6px;border-radius:4px}

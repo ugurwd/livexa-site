@@ -24,6 +24,9 @@
   var odeme = document.getElementById('sa-odeme');
   var odemeAlan = document.getElementById('sa-odeme-alan');
   var dugmeMetin = dugme.textContent;
+  var devam = document.getElementById('sa-devam');
+  var onaySatir = document.getElementById('odeme-onay-satir');
+  var ADIM1 = ['ad', 'soyad', 'telefon', 'eposta'];
   var kilitli = false;
 
   function m(ad) {
@@ -107,13 +110,25 @@
     return !!ilk;
   }
 
+  function onayHata(var_) {
+    if (!onaySatir) return;
+    onaySatir.classList.toggle('uo-onay--hata', !!var_);
+    if (var_) onay.setAttribute('aria-invalid', 'true'); else onay.removeAttribute('aria-invalid');
+  }
+
+  function adim2Ac() {
+    form.classList.add('sa-form--adim2');
+    var il = girdi('il');
+    if (il) setTimeout(function () { il.focus(); }, 0);
+  }
+
   function servisHata(kod) {
     servis.textContent = m(kod);
     servis.hidden = !kod;
   }
 
   function dugmeDurum() {
-    var pasif = kilitli || !onay.checked;
+    var pasif = kilitli;
     dugme.disabled = pasif;
     dugme.setAttribute('aria-disabled', pasif ? 'true' : 'false');
   }
@@ -190,7 +205,22 @@
   }
 
   onay.checked = false;
-  onay.addEventListener('change', dugmeDurum);
+  onay.addEventListener('change', function () { if (onay.checked) { onayHata(false); if (!form.querySelector('[aria-invalid="true"]')) { ozet.textContent = ''; ozet.hidden = true; } } dugmeDurum(); });
+
+  // İki adım: önce iletişim (ad, soyad, telefon, e-posta), "Devam et" ile adres ve ödeme
+  if (devam) {
+    form.classList.add('sa-form--iki-adim');
+    devam.addEventListener('click', function () {
+      var h = dogrula(), alt = {};
+      ADIM1.forEach(function (k) { if (h[k]) alt[k] = h[k]; });
+      if (hatalariGoster(alt)) return;
+      adim2Ac();
+    });
+    // Adım 1'de Enter → Devam et
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !form.classList.contains('sa-form--adim2') && e.target && e.target.tagName === 'INPUT') { e.preventDefault(); devam.click(); }
+    });
+  }
   dugmeDurum();
 
   if (faturaKutu) {
@@ -208,9 +238,17 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (kilitli || !onay.checked) return;
+    if (kilitli) return;
     servisHata('');
-    if (hatalariGoster(dogrula())) return;
+    if (!form.classList.contains('sa-form--adim2') && devam) { devam.click(); return; }
+    var alanHata = hatalariGoster(dogrula());
+    onayHata(!onay.checked);
+    if (!onay.checked) {
+      ozet.textContent = m('ozet');
+      ozet.hidden = false;
+      if (!alanHata) onay.focus();
+    }
+    if (alanHata || !onay.checked) return;
     var g = govdeKur();
     kilitli = true;
     dugmeDurum();
