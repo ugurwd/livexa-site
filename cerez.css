@@ -52,3 +52,14 @@ html.lx-cerez-acik .wa-dugme,html.lx-cerez-acik .uo-cubuk{visibility:hidden}
 .lx-cerez-panel__durum{margin:0;font-weight:700;color:var(--murekkep)}
 @media (prefers-reduced-motion:reduce){.lx-cerez-anahtar__ray,.lx-cerez-anahtar__ray::after{transition:none}}
 @media print{.lx-cerez,.lx-cerez-panel{display:none!important}}
+
+/* IE-2026-11-01-cerez-kucuk — mobilde küçük bant (metin ve eşit düğmeler değişmedi) */
+@media (max-width:760px){
+  .lx-cerez{padding:8px 0 calc(8px + env(safe-area-inset-bottom));border-top-width:2px}
+  .lx-cerez__ic{gap:8px}
+  .lx-cerez__ic > div:first-child{line-height:1.3}
+  .lx-cerez__bas{display:inline;font-size:14px;margin:0 4px 0 0}
+  .lx-cerez__metin{display:inline;font-size:12.5px;line-height:1.35}
+  .lx-cerez__baglantilar{font-size:12px;gap:2px 12px;margin-top:4px}
+  .lx-cerez__dugme{min-height:40px;padding:0 10px;font-size:15px}
+}
