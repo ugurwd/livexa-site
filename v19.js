@@ -241,7 +241,7 @@
   var gozle = function (els, esikDeger, gir) {
     var gz = new IntersectionObserver(function (g) {
       g.forEach(function (e) { if (e.isIntersecting) { gir(e.target); gz.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: esikDeger });
+    }, { rootMargin: '0px 0px 200px 0px', threshold: 0 });
     els.forEach(function (el) { gz.observe(el); });
   };
 

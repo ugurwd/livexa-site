@@ -52,6 +52,7 @@
 
   // Tıklanan öğenin sayfadaki yeri: en yakın kimlikli bölüm ya da bilinen sınıf
   var yer = function (el) {
+    if (el.closest('#hero-karar')) return 'hero-karar';
     if (el.closest('.gezinme, header')) return 'menu';
     if (el.closest('#site-cubuk, .uo-cubuk, .dn-cubuk')) return 'cubuk';
     if (el.closest('footer')) return 'altbilgi';

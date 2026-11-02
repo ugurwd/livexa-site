@@ -1,0 +1,75 @@
+/* LIVEXA · ana sayfa ilk ekran (IE-2026-11-02-ilk-ekran). Yalnız index.html'e bağlıdır, en son yüklenir.
+   Metin üretmez, metin değiştirmez: yalnız yer/sıra, ölçü, renk ve zamanlama. */
+
+/* ---------- Madde 3 · fiyat kutuları dokunulabilir (bütün genişlikler) ---------- */
+.uo-karar__fiyatlar{gap:12px;border:0}
+a.ie-paket{display:flex;flex-direction:column;justify-content:center;min-height:72px;padding:10px 14px;border:2px solid var(--murekkep);border-radius:16px;background:var(--beyaz,#fff);color:var(--murekkep);text-decoration:none;background-image:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+a.ie-paket span{color:var(--murekkep);text-decoration:none}
+.uo-karar__fiyat.ie-paket+.uo-karar__fiyat.ie-paket{padding-left:14px;border-left:2px solid var(--murekkep)}
+a.ie-paket--secili{background:var(--safran)}
+a.ie-paket:hover{box-shadow:0 4px 0 var(--murekkep);transform:translateY(-2px)}
+a.ie-paket:focus-visible{outline:3px solid var(--mandalina-metin,#C2440F);outline-offset:3px}
+.ie-paket .uo-karar__tutar{margin-top:2px;padding-top:0}
+/* Tek eylem rengi: hero düğmesi yapışkan çubuktaki düğmeyle aynı (styles.css .uo-dugme, safran zemin, mürekkep yazı) */
+.uo-karar__eylem .uo-dugme{background:var(--safran);color:var(--murekkep);border-color:var(--murekkep)}
+
+/* ---------- Madde 1 · oynat/durdur 40 px, kartın sağ üst köşesi ---------- */
+.dn-hero-kart .dn-video-dugme{top:12px;right:12px;bottom:auto;width:40px;height:40px;min-height:40px}
+.dn-hero-kart .dn-video-dugme::before{width:10px;height:12px;border-left-width:3px;border-right-width:3px}
+.dn-hero-kart .dn-video-dugme.durdu::before{width:0;height:0;border-width:7px 0 7px 11px;margin-left:3px}
+
+/* ---------- Madde 3/4 · karar bloğu ekrandayken çubuk ve yüzen WA gizli (ilk-ekran.js) ---------- */
+.uo-cubuk.ie-gizli{transform:translateY(110%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s}
+.wa-dugme.ie-wa-gizli{opacity:0;visibility:hidden;pointer-events:none;transition:bottom .3s cubic-bezier(.2,.8,.2,1),opacity .2s ease,visibility 0s linear .2s}
+@media (scripting:none){.uo-cubuk.ie-gizli{transform:none;visibility:visible}.wa-dugme.ie-wa-gizli{opacity:1;visibility:visible;pointer-events:auto}}
+
+/* ---------- Mobil ilk ekran ---------- */
+@media (max-width:760px){
+  /* Madde 1 · ürün ilk karede: tam genişlik kart, koyu zemin + poster arka planı, yalnız alt köşeler yuvarlak */
+  .uo-hero__ic{padding-top:0}
+  .uo-hero__urun{margin:0 calc(-1 * var(--kap-pad,20px));width:calc(100% + 2 * var(--kap-pad,20px))}
+  .uo-hero__urun .uo-vitrin.dn-hero-kart{aspect-ratio:auto;height:clamp(200px,calc(100svh - 540px),300px);border-radius:0 0 24px 24px;
+    background-color:#2D2063;
+    background-image:image-set(url("gorsel/ev-hero-poster-mobil-700.avif") type("image/avif"),url("gorsel/ev-hero-poster-mobil-700.webp") type("image/webp")),linear-gradient(180deg,#2D2063 0 56%,#E8E5DC 56% 100%);
+    background-size:cover,cover;background-position:50% 80%,0 0;background-repeat:no-repeat}
+  .dn-hero-kart img,.dn-hero-kart .dn-hero-video{object-position:50% 80%}
+  .uo-hero__urun .uo-gunes{display:none}
+  .gun-cizgisi__nokta{display:none}
+
+  /* Madde 3 · sıra: görsel → başlık → iki fiyat kutusu + düğme → paragraflar → haplar */
+  .uo-hero__metin{display:flex;flex-direction:column;padding-top:12px}
+  .uo-h1{order:1;margin-top:0;font-size:clamp(29px,8.6vw,36px);line-height:1.02}
+  .uo-karar{order:2;margin-top:12px}
+  .uo-hero__metin>.uo-sunus{order:3}
+  .uo-hero__metin>.uo-karar+.uo-sunus,.uo-hero__metin>.uo-sunus:first-of-type{margin-top:18px}
+  .hero__haplar{order:4;margin-top:16px}
+  .uo-karar__fiyatlar{gap:10px}
+  a.ie-paket{padding:8px 12px}
+  .uo-karar__fiyat.ie-paket+.uo-karar__fiyat.ie-paket{padding-left:12px}
+  .ie-paket .uo-karar__etiket{letter-spacing:.03em;line-height:1.25}
+  .ie-paket .uo-karar__tutar{font-size:clamp(24px,7.4vw,30px)}
+  .ie-paket .uo-karar__not{font-size:12px;line-height:1.3}
+  .uo-karar__eylem{margin-top:10px}
+
+  /* Madde 4 · yüzen WA 48 px (konum: wa.js --wa-alt, çubuğun 12 px üstü) */
+  .wa-dugme{width:48px;height:48px}
+  .wa-dugme svg{width:26px;height:26px}
+
+  /* Madde 5 · bant: iç boşluk 14 px, bağlantı aralığı 16 px (yazı boyutu değişmez) */
+  .lx-cerez .lx-cerez__ic.kap{padding-inline:14px}
+  .lx-cerez__baglantilar{gap:2px 16px}
+}
+
+/* ---------- Madde 5 · bant ~0,8 sn sonra alttan 250 ms kayarak açılır (metin, düğmeler, rıza mantığı aynı) ---------- */
+@keyframes ie-cerez-gir{from{transform:translateY(100%);visibility:hidden}1%{visibility:visible}to{transform:none;visibility:visible}}
+.lx-cerez:not([hidden]){animation:ie-cerez-gir .25s cubic-bezier(.2,.8,.2,1) .8s both}
+@media (prefers-reduced-motion:reduce){.lx-cerez:not([hidden]){animation-duration:1ms}}
+@media (min-width:761px){
+  .lx-cerez{padding:14px 0 calc(14px + env(safe-area-inset-bottom))}
+  .lx-cerez__baglantilar{gap:4px 16px}
+}
+
+/* ---------- Madde 6 · giriş animasyonları içeriği en fazla 200 ms saklar ---------- */
+.hero__haplar .hap{animation-duration:.2s!important;animation-delay:0s!important}
+.gizli.gorundu,.gizli.gorundu tbody tr,.gizli.gorundu .dikis__cizim{transition-duration:.2s!important;transition-delay:0s!important}
+.v18-hazir .v18-gor,.v18-hazir .v18-gor .v18-k,.v18-hazir .v18-gor .dn-kart__mol,.v18-hazir .v18-gor .mol__atom{transition-duration:.2s!important;transition-delay:0s!important}
