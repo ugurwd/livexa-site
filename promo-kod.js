@@ -41,6 +41,8 @@
       .then(function () { bekliyor = false; dugme.disabled = false; });
   }
   dugme.addEventListener('click', function () { uygula(false); });
+  // Şeritten gelen ?kod= kendiliğinden uygulanır (IE-2026-11-02-promo)
+  try { var gelen = new URLSearchParams(location.search).get('kod'); if (gelen && /^[A-Za-z0-9-]{3,24}$/.test(gelen) && !girdi.value) { girdi.value = gelen.toUpperCase(); uygula(true); } } catch (e) { /* yok */ }
   girdi.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (!girdi.readOnly) uygula(false); } });
   // Paket değişince uygulanmış kod yeni pakete göre yeniden kontrol edilir
   document.addEventListener('change', function (e) {
