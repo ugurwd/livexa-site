@@ -1,0 +1,23 @@
+/* IE-2026-11-22-ag — Bileşenler sayfası. Yalnız mevcut sitenin değişkenleri (--murekkep, --krem, --safran, --disp, --sans). */
+.bl-giris{padding-block:clamp(40px,6vw,80px) clamp(24px,3vw,40px)}
+.bl-form .d2{margin-top:.35em}
+.bl-madde{display:grid;grid-template-columns:180px minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start;padding-block:clamp(28px,4vw,44px);border-top:2px solid color-mix(in srgb,var(--murekkep) 14%,transparent);scroll-margin-top:96px}
+.bl-madde:first-of-type{margin-top:1.2em}
+.bl-madde__resim{width:180px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--murekkep);background:var(--krem)}
+.bl-madde__resim img{width:100%;height:100%;object-fit:cover;display:block}
+.bl-madde__no{font:800 15px/1 var(--disp);letter-spacing:.08em;color:var(--murekkep);opacity:.55;margin:0 0 .4em!important}
+.bl-madde__ad{font-family:var(--disp);font-size:clamp(28px,3.2vw,40px);line-height:1;letter-spacing:-.015em;margin:0}
+.bl-madde__doz{display:inline-block;margin:.7em 0 .2em!important;padding:6px 12px;border-radius:999px;background:var(--safran);color:var(--murekkep);font-weight:700;font-size:14px!important;line-height:1.2!important}
+.bl-form#bl-aksam .bl-madde__doz{background:var(--murekkep);color:var(--krem)}
+.bl-madde h4{font-family:var(--disp);font-size:19px;line-height:1.2;margin:1.1em 0 .35em}
+.bl-madde__miktar{margin-top:1em!important;padding:12px 16px;border-radius:14px;background:color-mix(in srgb,var(--safran) 22%,var(--krem))}
+.bl-tablo-kap{overflow-x:auto;margin-top:1em}
+.bl-tablo{width:100%;border-collapse:collapse;font-size:15px;line-height:1.45}
+.bl-tablo th,.bl-tablo td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:2px solid color-mix(in srgb,var(--murekkep) 12%,transparent)}
+.bl-tablo thead th{border-bottom:3px solid var(--murekkep);font-family:var(--disp)}
+.bl-tablo tbody th{white-space:nowrap}
+@media (max-width:759px){
+ .bl-madde{grid-template-columns:1fr;gap:14px}
+ .bl-madde__resim{width:120px}
+ .bl-tablo tbody th{white-space:normal}
+}
