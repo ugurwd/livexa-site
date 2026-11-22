@@ -1,0 +1,58 @@
+/* IE-2026-11-22-ag-ana — ana sayfa yeni bölümleri. Yalnız mevcut sitenin değişkenleri ve sınıfları. */
+.ag2-sunus-bag{font-weight:700;color:var(--murekkep);text-decoration:underline;text-decoration-color:var(--mandalina);text-decoration-thickness:2px;text-underline-offset:.2em;white-space:nowrap}
+
+.ag2-ozellik{background:var(--murekkep);color:var(--krem)}
+.ag2-ozellik__liste{list-style:none;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding-block:22px}
+.ag2-ozellik__liste li{display:flex;align-items:center;justify-content:center;gap:12px;font-weight:700;font-size:16px;line-height:1.25;padding:6px 14px}
+.ag2-ozellik__liste li+li{border-left:2px solid color-mix(in srgb,var(--krem) 22%,transparent)}
+.ag2-ozellik__liste svg{width:30px;height:30px;flex:none;color:var(--safran)}
+
+.ag2-ust{display:inline-block;font:800 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mandalina);margin:0 0 .9em}
+.ag2-p{font-size:18px;line-height:1.6;margin:0 0 1.4em;max-width:40ch}
+
+.ag2-nedir__izgara{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:start}
+.ag2-formuller{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ag2-formul{background:#fff;border:3px solid var(--murekkep);border-radius:var(--r-kart);padding:clamp(20px,2.4vw,28px);box-shadow:8px 8px 0 var(--safran)}
+.ag2-formul--gece{background:var(--murekkep);color:var(--krem);box-shadow:8px 8px 0 var(--nane-koyu)}
+.ag2-formul--gece .hap--gece{background:var(--krem);color:var(--murekkep)}
+.ag2-formul__h{font-family:var(--disp);font-size:clamp(24px,2.2vw,30px);line-height:1.05;letter-spacing:-.01em;margin:.7em 0 .2em}
+.ag2-formul__alt{margin:0 0 1em;font-size:15px;opacity:.8}
+.ag2-formul__liste{list-style:none;margin:0;padding:0;font-size:15.5px}
+.ag2-formul__liste li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1.5px solid color-mix(in srgb,currentColor 16%,transparent)}
+.ag2-formul__liste b{white-space:nowrap}
+
+.ag2-bilesen{background:color-mix(in srgb,var(--safran) 14%,var(--krem))}
+.ag2-bilesen__izgara{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,4vw,56px);align-items:center}
+.ag2-yuvarlaklar{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px 16px}
+.ag2-yuv{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--murekkep)}
+.ag2-yuv__resim{width:100%;max-width:124px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--murekkep);background:var(--krem);transition:transform .2s ease,box-shadow .2s ease}
+.ag2-yuv__resim img{width:100%;height:100%;object-fit:cover;display:block}
+.ag2-yuv:hover .ag2-yuv__resim,.ag2-yuv:focus-visible .ag2-yuv__resim{transform:translateY(-4px);box-shadow:0 6px 0 var(--safran)}
+.ag2-yuv__ad{font:800 17px/1.15 var(--disp);margin-top:.6em}
+.ag2-yuv__alt{font-size:13px;line-height:1.3;margin-top:.25em;opacity:.8}
+.ag2-yuv__doz{font-size:12.5px;font-weight:700;margin-top:.35em;padding:2px 9px;border-radius:999px;background:var(--krem);border:1.5px solid var(--murekkep)}
+
+.ag2-kartlar{padding-block:clamp(40px,5vw,72px) 0}
+.ag2-kartlar__izgara{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ag2-kart{background:#fff;border:3px solid var(--murekkep);border-radius:var(--r-kart);padding:clamp(22px,2.6vw,32px)}
+.ag2-kart--gece{background:var(--murekkep);color:var(--krem)}
+.ag2-kart--gece .dugme--dolu{background:var(--safran);color:var(--murekkep);border-color:var(--safran)}
+.ag2-kart__h{font-family:var(--disp);font-size:clamp(26px,2.6vw,34px);line-height:1.05;margin:0 0 .6em}
+.ag2-tik{list-style:none;margin:0;padding:0;font-size:17px}
+.ag2-tik li{position:relative;padding:6px 0 6px 32px}
+.ag2-tik li::before{content:"";position:absolute;left:0;top:9px;width:20px;height:20px;border-radius:50%;background:var(--safran) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.3l2.6 2.5L10 3.3' fill='none' stroke='%23221A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+
+@media (max-width:1099px){
+ .ag2-nedir__izgara,.ag2-bilesen__izgara{grid-template-columns:1fr}
+ .ag2-p{max-width:60ch}
+}
+@media (max-width:759px){
+ .ag2-ozellik__liste{grid-template-columns:1fr 1fr;padding-block:12px}
+ .ag2-ozellik__liste li{justify-content:flex-start;font-size:14.5px;padding:10px 4px}
+ .ag2-ozellik__liste li+li{border-left:0}
+ .ag2-formuller,.ag2-kartlar__izgara{grid-template-columns:1fr}
+ .ag2-yuvarlaklar{grid-template-columns:repeat(3,1fr);gap:20px 10px}
+ .ag2-yuv__ad{font-size:15px}.ag2-yuv__alt{font-size:12px}
+ .ag2-p{font-size:16.5px}
+}
+.ag2-nedir .dugme span[aria-hidden],.ag2-bilesen .dugme span[aria-hidden],.ag2-kart .dugme span[aria-hidden]{margin-left:.45em}
