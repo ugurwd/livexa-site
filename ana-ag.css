@@ -56,3 +56,8 @@
  .ag2-p{font-size:16.5px}
 }
 .ag2-nedir .dugme span[aria-hidden],.ag2-bilesen .dugme span[aria-hidden],.ag2-kart .dugme span[aria-hidden]{margin-left:.45em}
+/* satın al sayfası (IE-2026-11-22-ag-sa) */
+.ag2-sa .ag2-p{max-width:60ch}
+.ag2-sa .ag2-formuller{margin-top:8px}
+.ag2-sa__bag{margin:28px 0 0}
+.ag2-sa__bag .dugme span[aria-hidden]{margin-left:.45em}
